@@ -167,3 +167,80 @@ footer {
 .social-links a:hover {
   color: #ff5733;
 }
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; 
+  overflow: hidden;
+}
+
+#heroVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  transform: translate(-50%, -50%);
+  z-index: -1; 
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  color: white; 
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejorar la legibilidad */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff5722; 
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+
+.cta-button:hover {
+  background-color: #e64a19; 
+}
+
+#inicio,
+    #historia {
+      opacity: 0;
+      transform: translateX(-100px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    #historia {
+      transform: translateX(100px); 
+    }
+
+    #inicio.slide-in,
+    #historia.slide-in {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .nav-links a {
+      color: white; 
+      text-decoration: none; 
+      transition: color 0.3s ease; 
+    }
+
+    .nav-links a:hover {
+      color: #e04b2d; 
+    }

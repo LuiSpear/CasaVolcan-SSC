@@ -5,23 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Casa del Volcán - Universidad de Colima</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="img/icono.png">
 </head>
 <body>
   <header class="header">
     <div class="navbar">
-      <img src="logo.png" alt="Logo Universidad de Colima" class="logo">
+      <img src="/img/logo.png" alt="Logo Universidad de Colima" class="logo">
       <nav>
         <ul class="nav-links">
           <li><a href="historia.html">Historia</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="">Fotos</a></li>
-          <li><a href="">Redes Sociales</a></li>
+          <li><a href="fotos.html">Fotos</a></li>
+          <li><a href="Redes.html">Redes Sociales</a></li>
           <li><a href="">Contáctanos</a></li>
         </ul>
       </nav>
     </div>
     <div class="hero">
-      <img src="volcancolima.jpg" alt="Volcán de fondo">
+      <video autoplay muted loop id="heroVideo">
+        <source src="/img/Ejemplo.webm" type="video/webm">
+        Tu navegador no soporta la etiqueta de video.
+      </video>
       <div class="hero-text">
         <div class="overlay">
           <h1>Bienvenidos a la Casa del Volcán</h1>
@@ -36,7 +40,7 @@
     <section class="section" id="inicio">
       <h2>La <span class="highlight">Casa</span> del <span class="highlight2">Volcán</span></h2>
       <div class="content">
-        <img src="salamonitoreo.jpg" alt="Sala de monitoreo" class="image">
+        <img src="/img/salamonitoreo.jpg" alt="Sala de monitoreo" class="image">
         <p>
           En la Casa del Volcán, puedes descubrir información única sobre el Volcán de Colima. Desde su monitoreo en tiempo real hasta la historia detrás de este majestuoso lugar.
         </p>
@@ -49,7 +53,7 @@
         <p>
           La Casa del Volcán fue creada como un centro para la educación, investigación y divulgación sobre el Volcán de Colima. Desde sus inicios, ha sido un lugar clave para el aprendizaje y la interacción con la naturaleza y la ciencia.
         </p>
-        <img src="casavolcan.jpg" alt="La Casa del Volcán" class="image">
+        <img src="/img/casavolcan.jpg" alt="La Casa del Volcán" class="image">
       </div>
     </section>
   </main>
@@ -66,5 +70,26 @@
       </ul>
     </div>
   </footer>
+
+  <script>
+    const inicio = document.getElementById('inicio');
+    const historia = document.getElementById('historia');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('slide-in');
+          }
+        });
+      },
+      {
+        threshold: 0.2, // Activa la animación cuando el 20% del elemento es visible
+      }
+    );
+
+    observer.observe(inicio);
+    observer.observe(historia);
+  </script>
 </body>
 </html>
