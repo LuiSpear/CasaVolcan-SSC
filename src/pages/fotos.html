@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Fotos - Casa Volcán</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/png" href="/src/img/icono.png">
+    <style>
+        .galeria-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .galeria-titulo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .galeria-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .galeria-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .galeria-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .galeria-caption {
+            position: absolute;
+            bottom: -100px;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px;
+            transition: bottom 0.3s ease;
+        }
+        
+        .galeria-caption h3 {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+        }
+        
+        .galeria-caption p {
+            margin: 0;
+            font-size: 14px;
+        }
+        
+        .galeria-item.active .galeria-caption {
+            bottom: 0;
+        }
+        
+        /* Estilos para vista previa a pantalla completa */
+        .fullscreen-preview {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            flex-direction: column;
+            display: none;
+        }
+        
+        .fullscreen-preview img {
+            max-width: 90%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+        
+        .fullscreen-caption {
+            color: white;
+            margin-top: 20px;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .fullscreen-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .galeria-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .galeria-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Aquí iría tu encabezado/navegación existente -->
+    <header>
+        <div class="navbar">
+            <img src="/src/img/logo.png" alt="Logo Universidad de Colima" class="logo">
+            <h1 style="color: white;">Galería Fotográfica</h1>
+            <nav>
+              <ul class="nav-links">
+                <li><a href="/src/pages/index.html">Volver a Inicio</a></li>
+              </ul>
+            </nav>
+          </div>
+    </header>
+    
+    <main class="galeria-container">
+        <div class="galeria-titulo">
+            <h2>Explora las imágenes del Volcán de Colima y sus alrededores</h2>
+        </div>
+        
+        <div class="galeria-grid">
+            <!-- Elemento 1 -->
+            <div class="galeria-item" onclick="toggleCaption(this)">
+                <img src="../img/volcancolima.jpg" alt="Volcán de Colima" class="galeria-img">
+                <div class="galeria-caption">
+                    <h3>Volcán de Colima</h3>
+                    <p>Vista panorámica del majestuoso Volcán de Colima, uno de los volcanes más activos de México.</p>
+                </div>
+            </div>
+            
+            <!-- Elemento 2 -->
+            <div class="galeria-item" onclick="toggleCaption(this)">
+                <img src="../img/imag1.jpg" alt="Actividad volcánica" class="galeria-img">
+                <div class="galeria-caption">
+                    <h3>Actividad Volcánica</h3>
+                    <p>Impresionante muestra de actividad volcánica captada durante una de las erupciones recientes.</p>
+                </div>
+            </div>
+            
+            <!-- Elemento 3 -->
+            <div class="galeria-item" onclick="toggleCaption(this)">
+                <img src="../img/imag2.jpg" alt="Vista desde la montaña" class="galeria-img">
+                <div class="galeria-caption">
+                    <h3>Vista desde la Montaña</h3>
+                    <p>Paisaje visto desde uno de los puntos de observación en las faldas del volcán.</p>
+                </div>
+            </div>
+            
+            <!-- Elemento 4 -->
+            <div class="galeria-item" onclick="toggleCaption(this)">
+                <img src="../img/imag3.jpg" alt="Sala de monitoreo" class="galeria-img">
+                <div class="galeria-caption">
+                    <h3>Sala de Monitoreo</h3>
+                    <p>Instalaciones donde se realiza el seguimiento constante de la actividad del volcán.</p>
+                </div>
+            </div>
+            
+            <!-- Elemento 5 -->
+            <div class="galeria-item" onclick="toggleCaption(this)">
+                <img src="../img/salamonitoreo.jpg" alt="Equipos de monitoreo" class="galeria-img">
+                <div class="galeria-caption">
+                    <h3>Equipos de Monitoreo</h3>
+                    <p>Tecnología de punta utilizada para el análisis y monitoreo de la actividad volcánica en tiempo real.</p>
+                </div>
+            </div>
+            
+            <!-- Elemento 6 -->
+            <div class="galeria-item" onclick="toggleCaption(this)">
+                <img src="../img/volcan.webp" alt="Erupción nocturna" class="galeria-img">
+                <div class="galeria-caption">
+                    <h3>Erupción Nocturna</h3>
+                    <p>Espectacular vista de una erupción captada durante la noche, mostrando la magnitud de este fenómeno natural.</p>
+                </div>
+            </div>
+            
+            <!-- Elemento 7 -->
+            <div class="galeria-item" onclick="toggleCaption(this)">
+                <img src="../img/casavolcan.jpg" alt="Casa Volcán" class="galeria-img">
+                <div class="galeria-caption">
+                    <h3>Casa Volcán</h3>
+                    <p>Nuestras instalaciones de investigación y educación ubicadas en un punto estratégico para el estudio del volcán.</p>
+                </div>
+            </div>
+            
+            <!-- Elemento 8 -->
+            <div class="galeria-item" onclick="toggleCaption(this)">
+                <img src="../img/Ejemplo.webm" alt="Actividad sísmica" class="galeria-img">
+                <div class="galeria-caption">
+                    <h3>Actividad Sísmica</h3>
+                    <p>Registro de la actividad sísmica relacionada con el comportamiento del volcán durante periodos de mayor actividad.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Vista previa a pantalla completa -->
+    <div class="fullscreen-preview" id="fullscreenPreview">
+        <span class="fullscreen-close" onclick="closeFullscreen()">&times;</span>
+        <img id="fullscreenImage" src="" alt="">
+        <div class="fullscreen-caption">
+            <h3 id="fullscreenTitle"></h3>
+            <p id="fullscreenDescription"></p>
+        </div>
+    </div>
+    
+    <!-- Aquí iría tu pie de página existente -->
+    
+    <script>
+        // Función para mostrar/ocultar el pie de foto al hacer clic
+        function toggleCaption(element) {
+            // Mostrar/ocultar el pie de foto
+            element.classList.toggle('active');
+            
+            // Si el elemento está activo, mostrar vista previa a pantalla completa después de un breve retraso
+            if (element.classList.contains('active')) {
+                setTimeout(function() {
+                    showFullscreen(element);
+                }, 300);
+            }
+        }
+        
+        // Función para mostrar imagen en pantalla completa
+        function showFullscreen(element) {
+            const imgSrc = element.querySelector('img').src;
+            const title = element.querySelector('h3').textContent;
+            const description = element.querySelector('p').textContent;
+            
+            document.getElementById('fullscreenImage').src = imgSrc;
+            document.getElementById('fullscreenTitle').textContent = title;
+            document.getElementById('fullscreenDescription').textContent = description;
+            document.getElementById('fullscreenPreview').style.display = 'flex';
+            
+            // Evitar desplazamiento en el fondo
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Función para cerrar vista previa a pantalla completa
+        function closeFullscreen() {
+            document.getElementById('fullscreenPreview').style.display = 'none';
+            
+            // Restaurar desplazamiento
+            document.body.style.overflow = 'auto';
+            
+            // Desactivar todos los elementos de galería
+            const activeItems = document.querySelectorAll('.galeria-item.active');
+            activeItems.forEach(item => {
+                item.classList.remove('active');
+            });
+        }
+        
+        // Cerrar vista previa al presionar ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeFullscreen();
+            }
+        });
+    </script>
+</body>
+</html>
