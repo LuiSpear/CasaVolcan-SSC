@@ -15,7 +15,7 @@ a {
 }
 
 .navbar {
-  background-color: #006633;
+  background-color: #e49218;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,7 +41,7 @@ a {
 }
 
 .nav-links a:hover {
-  background-color: #006633;
+  background-color: #e49218;
 }
 
 .logo {
@@ -109,7 +109,7 @@ a {
 .section h2 {
   text-align: center;
   font-size: 2em;
-  color: #3b763d;
+  color: #000000;
 }
 
 .highlight {
@@ -142,7 +142,7 @@ a {
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #3b763d;
+  background-color: #e49218;
   color: white;
 }
 
