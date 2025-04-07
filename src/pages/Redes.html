@@ -22,6 +22,45 @@
       color: #333;
     }
 
+    /* NAVBAR */
+    .navbar {
+      background-color: #ff5733;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .logo {
+      height: 50px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      display: inline;
+    }
+
+    .nav-links a {
+      color: white;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #e14c2a;
+    }
+
+    /* CONTENIDO PRINCIPAL */
     .section {
       padding: 40px 20px;
       background-color: white;
@@ -130,6 +169,19 @@
 </head>
 <body>
 
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <img src="../img/logo.png" alt="Logo" class="logo">
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="historia.html">Historia</a></li>
+      <li><a href="redes.html">Redes</a></li>
+      <li><a href="galeria.html">Galería</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </div>
+
+  <!-- CONTENIDO -->
   <section class="section" id="redes">
     <h2 class="highlight">Nuestras Redes Sociales</h2>
 

@@ -3,129 +3,144 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contacto</title>
+  <title>Formulario de Visita - CUEV</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      line-height: 1.6;
-      color: #333;
       background-color: #f3f3f3;
+      color: #333;
+    }
+
+    .navbar {
+      background-color: #ff5733;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .logo {
+      height: 50px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      display: inline;
+    }
+
+    .nav-links a {
+      color: white;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #e14c2a;
     }
 
     .section {
-      padding: 40px 20px;
-      background-color: white;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-      margin: 40px auto;
-      border-radius: 10px;
-      max-width: 1000px;
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
     }
 
     .section h2 {
       text-align: center;
-      font-size: 2em;
-      color: #000000;
-      margin-bottom: 30px;
-    }
-
-    .highlight {
+      margin-bottom: 25px;
       color: #ff5733;
     }
 
-    .contacto-contenido {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 40px;
-    }
-
-    .contacto-info {
-      flex: 1;
-      min-width: 250px;
-      font-size: 1.1em;
-    }
-
-    .contacto-info a {
-      color: #ff5733;
-      text-decoration: none;
-    }
-
-    .contacto-info a:hover {
-      text-decoration: underline;
-    }
-
-    .contacto-formulario {
-      flex: 1;
-      min-width: 280px;
-    }
-
-    .contacto-formulario label {
+    form label {
       display: block;
       margin-bottom: 5px;
       font-weight: bold;
     }
 
-    .form-control {
+    form input,
+    form textarea,
+    form select {
       width: 100%;
       padding: 10px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       border: 1px solid #ccc;
-      border-radius: 5px;
-      transition: border-color 0.3s ease;
+      border-radius: 8px;
       box-sizing: border-box;
     }
 
-    .form-control:focus {
+    form input:focus,
+    form textarea:focus {
       border-color: #ff5733;
       outline: none;
     }
 
     .cta-button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #ff5722;
+      background-color: #ff5733;
       color: white;
-      font-weight: bold;
-      border-radius: 5px;
+      padding: 12px 20px;
       border: none;
+      border-radius: 8px;
+      font-weight: bold;
       cursor: pointer;
-      transition: background-color 0.3s ease;
-      font-size: 1em;
+      width: 100%;
     }
 
     .cta-button:hover {
-      background-color: #ff5733;
+      background-color: #e14c2a;
     }
   </style>
 </head>
 <body>
 
-  <section id="contacto" class="section">
-    <h2 class="highlight">Contáctanos</h2>
-    
-    <div class="contacto-contenido">
-      <!-- Datos de contacto -->
-      <div class="contacto-info">
-        <p><strong>Correo:</strong> <a href="mailto:contacto@empresa.com">cuev@ucol.mx</a></p>
-        <p><strong>Teléfono:</strong> <a href="tel:+523121234567">+52 312 316 1134 ext. 47051</a></p>
-        <p><strong>Dirección:</strong> Av. Universidad No. 333, Colima, México</p>
-      </div>
+  <!-- Navbar -->
+  <div class="navbar">
+    <img src="../img/logo.png" alt="Logo" class="logo">
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="historia.html">Historia</a></li>
+      <li><a href="redes.html">Redes</a></li>
+      <li><a href="galeria.html">Galería</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </div>
 
-      <!-- Formulario -->
-      <form class="contacto-formulario" action="#" method="post">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required class="form-control" />
+  <!-- Sección del formulario -->
+  <section class="section">
+    <h2>Formulario de Visita</h2>
+    <form action="#" method="post">
+      <label for="nombre">Nombre o Escuela:</label>
+      <input type="text" id="nombre" name="nombre" required />
 
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required class="form-control" />
+      <label for="fecha">Fecha de Visita:</label>
+      <input type="date" id="fecha" name="fecha" required />
 
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="5" required class="form-control"></textarea>
+      <label for="hora">Hora de Visita:</label>
+      <input type="time" id="hora" name="hora" required />
 
-        <button type="submit" class="cta-button">Enviar</button>
-      </form>
-    </div>
+      <label for="personas">No. de Personas:</label>
+      <input type="number" id="personas" name="personas" min="1" required />
+
+      <label for="contacto">Teléfono y/o Correo Electrónico:</label>
+      <input type="text" id="contacto" name="contacto" required />
+
+      <button type="submit" class="cta-button">Enviar Solicitud</button>
+    </form>
   </section>
 
 </body>
