@@ -26,7 +26,7 @@ a {
   list-style: none;
   display: flex;
   gap: 15px;
-}
+  }
 
 .nav-links li {
   display: inline;
@@ -38,14 +38,16 @@ a {
   padding: 5px 10px;
   border-radius: 5px;
   transition: background-color 0.3s;
+  font-size: 20px;
 }
 
 .nav-links a:hover {
   background-color: #ff5733;
+  cursor: pointer;
 }
 
 .logo {
-  height: 50px;
+  height: 70px;
 }
 
 .hero {
@@ -126,6 +128,7 @@ a {
   align-items: center;
   gap: 20px;
   margin: 20px 0;
+  font-size: 20px;
 }
 
 .content img {
@@ -137,6 +140,8 @@ a {
 .content p {
   width: 55%;
   text-align: justify;
+  font-size: 30px;
+
 }
 
 footer {
@@ -148,6 +153,8 @@ footer {
 
 .footer-content p {
   margin: 5px 0;
+  font-size: 19px;
+
 }
 
 .social-links {
@@ -162,6 +169,7 @@ footer {
   color: white;
   font-weight: bold;
   transition: color 0.3s;
+  font-size: 19px;
 }
 
 .social-links a:hover {
@@ -243,6 +251,9 @@ footer {
 
     .nav-links a:hover {
       color: #ff5733; 
+      color: white;
+      outline: solid #ff5733; /* un rojo más oscuro tipo highlight */
+      background-color: #cc4422; /* ligeramente más oscuro que el original */
     }
     
     .contacto-section {

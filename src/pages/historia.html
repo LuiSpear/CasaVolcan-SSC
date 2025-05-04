@@ -6,6 +6,9 @@
     <title>Historia</title>
     <link rel="stylesheet" href="/src/css/styles.css">
     <link rel="icon" type="image/png" href="/src/img/icono.png">
+      
+      
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,6 +16,7 @@
             padding: 0;
             background-color: #f9f9f9;
             color: #333;
+            font-size: 20px;
         }
         .container {
             max-width: 900px;
@@ -65,6 +69,42 @@
         .nav-links a:hover {
       color: #e04b2d; 
     }
+
+    
+
+    /* Estilo del contenedor del dropdown */
+.dropdown {
+  position: relative;
+}
+
+/* Ocultar contenido inicialmente */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ff5733; /* o tu color del navbar */
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  z-index: 1;
+}
+
+/* Mostrar contenido al pasar el mouse */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Estilo de los enlaces dentro del dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #e14c2a;
+}
+
     </style>
 </head>
 <body>
@@ -100,7 +140,18 @@
         <p>
             Durante los últimos años, Colima se ha convertido en uno de los sitios que más interés han atraído debido a sus condiciones geológicas, geofísicas, sismológicas y vulcanológicas. Diversos proyectos de investigación nacionales e internacionales han permitido avanzar significativamente en el conocimiento de la evolución geológica de la región.
         </p>
+
+        <li class="dropdown">
+            <a href="#">Más</a>
+            <ul class="dropdown-content">
+              <li><a href="/src/pages/tour.html">Tour</a></li>
+              <li><a href="/src/pages/equipo.html">Nuestro Equipo</a></li>
+              <li><a href="/src/pages/informes.html">Informes</a></li>
+            </ul>
+          </li>
+    
     </div>
+
     <footer>
         &copy; 2025 Centro de Estudios Vulcanológicos - Universidad de Colima. Todos los derechos reservados.
     </footer>
