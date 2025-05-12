@@ -6,6 +6,13 @@
   <title>La Casa del Volcán - Universidad de Colima</title>
   <link rel="stylesheet" href="/src/css/styles.css">
   <link rel="icon" type="image/png" href="/src/img/icono.png">
+
+  <!-- SDK de Facebook -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v18.0"
+    nonce="abc123">
+  </script>
 </head>
 <body>
   <header class="header">
@@ -18,10 +25,10 @@
           <li><a href="/src/pages/fotos.html">Fotos</a></li>
           <li><a href="/src/pages/redes.html">Redes Sociales</a></li>
           <li><a href="/src/pages/contacto.html">Contáctanos</a></li>
-          
         </ul>
       </nav>
     </div>
+
     <div class="hero">
       <video autoplay muted loop id="heroVideo">
         <source src="/src/img/Ejemplo2.mp4" type="video/mp4">
@@ -31,6 +38,18 @@
         <div class="overlay">
           <h1>Bienvenidos a la Casa del Volcán</h1>
           <p>Explora y conoce el fascinante mundo del Volcán de Colima</p>
+      
+          <div class="social-stats">
+            <div class="stat">
+              <span class="number">15,000</span>
+              <span class="label">Seguidores</span>
+            </div>
+            <div class="stat">
+              <span class="number">6,500</span>
+              <span class="label">Me gusta</span>
+            </div>
+          </div>
+      
           <a href="/src/pages/contacto.html" class="cta-button">Realizar un tour</a>
         </div>
       </div>

@@ -327,7 +327,37 @@ footer {
 }
 
   #ubicacion .map-container {
-  margin-top: 20px;
+  margin-left: 7%;
+  margin-top: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+}
+
+.social-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.stat {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  color: #fff;
+  text-align: center;
+  min-width: 100px;
+}
+
+.stat .number {
+  font-size: 1.6rem;
+  font-weight: bold;
+  display: block;
+}
+
+.stat .label {
+  font-size: 0.9rem;
+  opacity: 0.9;
 }
