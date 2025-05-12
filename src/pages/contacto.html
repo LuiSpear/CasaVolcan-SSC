@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Formulario de Visita - CUEV</title>
   <link rel="icon" type="image/png" href="/src/img/icono.png">
-
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
@@ -24,6 +22,11 @@
       align-items: center;
       padding: 10px 20px;
       font-size: 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
     }
 
     .logo {
@@ -55,9 +58,17 @@
       background-color: #e14c2a;
     }
 
+    .contenedor-flex {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 140px 40px 40px; /* margen superior ajustado para navbar fija */
+      flex-wrap: wrap;
+    }
+
     .section {
-      max-width: 600px;
-      margin: 50px auto;
+      flex: 1 1 500px;
       background-color: #fff;
       padding: 30px;
       border-radius: 15px;
@@ -91,7 +102,6 @@
     form textarea:focus {
       border-color: #ff5733;
       outline: none;
-    
     }
 
     .cta-button {
@@ -118,34 +128,65 @@
     <ul class="nav-links">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="historia.html">Historia</a></li>
+      <li><a href="/src/pages/faq.html">FAQ</a></li>
       <li><a href="redes.html">Redes</a></li>
-      <li><a href="galeria.html">Galería</a></li>
+      <li><a href="fotos.html">Galería</a></li>
       <li><a href="contacto.html">Contacto</a></li>
     </ul>
   </div>
 
-  <!-- Sección del formulario -->
-  <section class="section">
-    <h2>Formulario de Visita</h2>
-    <form action="#" method="post">
-      <label for="nombre">Nombre o Escuela:</label>
-      <input type="text" id="nombre" name="nombre" required />
+  <!-- Contenedor de los recuadros -->
+  <div class="contenedor-flex">
 
-      <label for="fecha">Fecha de Visita:</label>
-      <input type="date" id="fecha" name="fecha" required />
+    <!-- Segundo recuadro: Información adicional (puedes cambiar el contenido) -->
+    <section class="section">
+      <h2>Contacto</h2>
 
-      <label for="hora">Hora de Visita:</label>
-      <input type="time" id="hora" name="hora" required />
 
-      <label for="personas">No. de Personas:</label>
-      <input type="number" id="personas" name="personas" min="1" required />
+      <form action="#" method="post">
+        <label for="nombre">Correo Electrónico:</label>
+        <input type="text" id="nombre" name="nombre" required />
 
-      <label for="contacto">Teléfono y/o Correo Electrónico:</label>
-      <input type="text" id="contacto" name="contacto" required />
+        <label for="contacto">Asunto o motivo de visita:</label>
+        <input type="text" id="contacto" name="contacto" required />
 
-      <button type="submit" class="cta-button">Enviar Solicitud</button>
-    </form>
-  </section>
+      </form>
+
+
+      <p>Recuerda llegar 15 minutos antes de tu cita para realizar el registro.</p>
+      <p>Para visitas escolares, se recomienda traer lista impresa de participantes.</p>
+      <p>Contacto directo: <strong>cuev@ucol.mx</strong></p>
+      <p>Horario de atención: <br> Lunes a Viernes, 8:00am - 3:00pm</p>
+    </section>
+
+
+
+    <!-- Primer recuadro: Formulario -->
+    <section class="section">
+      <h2>Formulario de Visita</h2>
+      <form action="#" method="post">
+        <label for="nombre">Nombre o Escuela:</label>
+        <input type="text" id="nombre" name="nombre" required />
+
+        <label for="fecha">Fecha de Visita:</label>
+        <input type="date" id="fecha" name="fecha" required />
+
+        <label for="hora">Hora de Visita:</label>
+        <input type="time" id="hora" name="hora" required />
+
+        <label for="personas">No. de Personas:</label>
+        <input type="number" id="personas" name="personas" min="1" required />
+
+        <label for="contacto">Teléfono y/o Correo Electrónico:</label>
+        <input type="text" id="contacto" name="contacto" required />
+
+        <button type="submit" class="cta-button">Enviar Solicitud</button>
+      </form>
+    </section>
+
+  </div>
 
 </body>
 </html>
+<!--     </div>
+ -->
