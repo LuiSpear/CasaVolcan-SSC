@@ -45,17 +45,21 @@
     .nav-links a:hover {
       background-color: #e14c2a;
     }
-    .contenedor-flex {
-      display: flex;
-      justify-content: center;
-      padding: 80px 20px 40px;
-    }
+  .contenedor-flex {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px 20px 40px;
+    gap: 60px; /* antes era menos */
+    flex-wrap: wrap;
+  }
+
     .section {
       background-color: #fff;
-      padding: 40px;
-      border-radius: 15px;
+      padding: 60px;
+      border-radius: 25px;
       box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
+      max-width: 560px;
       width: 100%;
     }
     .section h2 {
@@ -74,7 +78,7 @@
       margin-bottom: 5px;
       font-weight: bold;
     }
-    form input, form textarea {
+    form input {
       width: 100%;
       padding: 10px;
       margin-bottom: 20px;
@@ -83,6 +87,12 @@
       box-sizing: border-box;
       font-size: 16px;
     }
+
+    form textarea {
+      height: 400px;
+      width: 100%;
+    }
+
     form input:focus, form textarea:focus {
       border-color: #ff5733;
       outline: none;
@@ -159,81 +169,70 @@
 
   <!-- Formulario de Visita -->
   <div class="contenedor-flex">
-    <section class="section">
-      <h2>Formulario de Visita</h2>
-      <form action="https://formsubmit.co/lacasadelvolcan@ucol.mx" method="POST">
-        <input type="hidden" name="_subject" id="hiddenSubject">
-        <input type="hidden" name="_captcha" value="false">
-
-        <label for="nombre">Nombre o Escuela:</label>
-        <input type="text" id="nombre" name="nombre" required />
-
-        <label for="fecha">Fecha de Visita:</label>
-        <input type="date" id="fecha" name="fecha" required />
-
-        <label for="hora">Hora de Visita:</label>
-        <input type="time" id="hora" name="hora" required />
-
-        <label for="personas">No. de Personas:</label>
-        <input type="number" id="personas" name="personas" min="1" required />
-
-        <label for="tel">Teléfono:</label>
-        <input type="text" id="tel" name="tel" required />
-
-        <label for="correo">Correo Electrónico:</label>
-        <input type="email" id="correo" name="correo" required />
-
-        <label for="asunto">Asunto:</label>
-        <input type="text" id="asunto" name="asunto" required />
-
-        <button type="submit" class="cta-button">Enviar Solicitud</button>
-      </form>
-    </section>
-  </div>
-
-  <!-- Formulario de Contacto Directo -->
-  <section class="section" style="margin: 40px auto 60px; max-width: 600px;">
-    <h2>Enviar un Correo Directo</h2>
+<section class="section">
+    <h2>Formulario de Visita</h2>
     <form action="https://formsubmit.co/lacasadelvolcan@ucol.mx" method="POST">
+      <input type="hidden" name="_subject" id="hiddenSubject">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_subject" id="contactSubject">
-
-      <label for="email">Tu Correo Electrónico:</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="asunto2">Asunto:</label>
-      <input type="text" id="asunto2" name="asunto2" required />
-
-      <label for="mensaje">Mensaje:</label>
-      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-
-      <button type="submit" class="cta-button">Enviar Correo</button>
+      <label for="nombre">Nombre o Escuela:</label>
+      <input type="text" id="nombre" name="nombre" required />
+      <label for="fecha">Fecha de Visita:</label>
+      <input type="date" id="fecha" name="fecha" required />
+      <label for="hora">Hora de Visita:</label>
+      <input type="time" id="hora" name="hora" required />
+      <label for="personas">No. de Personas:</label>
+      <input type="number" id="personas" name="personas" min="1" required />
+      <label for="tel">Teléfono:</label>
+      <input type="text" id="tel" name="tel" required />
+      <label for="correo">Correo Electrónico:</label>
+      <input type="email" id="correo" name="correo" required />
+      <label for="asunto">Asunto:</label>
+      <input type="text" id="asunto" name="asunto" required />
+      <button type="submit" class="cta-button">Enviar Solicitud</button>
     </form>
   </section>
 
-  <!-- Información de contacto -->
-  <section class="section" style="margin: 40px auto 60px; max-width: 600px;">
-    <h2>Contacto</h2>
-    <p><strong>Correo Electrónico:</strong> lacasadelvolcan@ucol.mx</p>
-    <p><strong>Horario de Atención:</strong><br>Jueves - Sábado: 9:00 am - 10:00 pm</p>
-    <p><strong>Teléfono:</strong> 312 316 1134</p>
-    <p>Para visitas escolares, se recomienda traer lista impresa de participantes.</p>
+  <!-- Formulario de Contacto Directo -->
+  <section class="section">
+    <h2>Contáctanos</h2>
+    <form action="https://formsubmit.co/lacasadelvolcan@ucol.mx" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" id="contactSubject">
+      <label for="email">Tu Correo Electrónico:</label>
+      <input type="email" id="email" name="email" required />
+      <label for="asunto2">Asunto:</label>
+      <input type="text" id="asunto2" name="asunto2" required />
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+      <button type="submit" class="cta-button">Enviar Correo</button>
+    </form>
   </section>
+</div>
 
-  <script>
-    document.querySelectorAll("form")[0].addEventListener("submit", function () {
-      const subjectValue = document.getElementById("asunto").value || "Nuevo mensaje de visitante";
-      document.getElementById("hiddenSubject").value = subjectValue;
-    });
-    document.querySelectorAll("form")[1].addEventListener("submit", function () {
-      const subject = document.getElementById("asunto2").value || "Mensaje desde contacto";
-      document.getElementById("contactSubject").value = subject;
-    });
-  </script>
+<!-- Sección de Contacto general -->
+<section class="section" style="margin: 40px auto 60px; max-width: 600px;">
+  <h2>Contacto</h2>
+  <p><strong>Correo Electrónico:</strong> lacasadelvolcan@ucol.mx</p>
+  <p><strong>Horario de Atención:</strong><br>Jueves - Sábado: 9:00 am - 10:00 pm</p>
+  <p><strong>Teléfono:</strong> 312 316 1134</p>
+  <p>Para visitas escolares, se recomienda traer lista impresa de participantes.</p>
+</section>
 
-  <button class="toggle-dark" onclick="document.body.classList.toggle('dark-mode')">
-    🌙 Modo Oscuro
-  </button>
+<!-- Scripts -->
+<script>
+  document.querySelectorAll("form")[0].addEventListener("submit", function () {
+    const subjectValue = document.getElementById("asunto").value || "Nuevo mensaje de visitante";
+    document.getElementById("hiddenSubject").value = subjectValue;
+  });
+  document.querySelectorAll("form")[1].addEventListener("submit", function () {
+    const subject = document.getElementById("asunto2").value || "Mensaje desde contacto";
+    document.getElementById("contactSubject").value = subject;
+  });
+</script>
+
+<button class="toggle-dark" onclick="document.body.classList.toggle('dark-mode')">
+  🌙 Modo Oscuro
+</button>
 </body>
 </html>
 
