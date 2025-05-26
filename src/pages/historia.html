@@ -18,13 +18,15 @@
       font-size: 25px;
     }
     .container {
-      max-width: 80%;
-      margin: 5rem auto;
+      max-width: 75%;
+      margin: 1rem auto 2rem auto; /* 1rem arriba, 2rem abajo */
+      margin-right: 5px; /* lo puedes mantener si quieres ese espacio lateral */
       background: white;
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       padding: 1.5rem;
     }
+
     p {
       text-align: justify;
       line-height: 1.8;
@@ -58,10 +60,12 @@
       color: white;
       padding: 1rem;
       margin-top: 2rem;
+      font-size: 17px;
     }
     .nav-links a:hover {
       color: #e04b2d;
     }
+    /*  
     .dropdown {
       position: relative;
     }
@@ -101,10 +105,11 @@
     }
 
     .list-group-item:hover {
-  background-color: #f56d299d; /* gris clarito como Bootstrap */
+  background-color: #f56d299d; 
   color: #000;
   cursor: pointer;
-}
+  */
+
   </style>
   <!-- FIN DEL STYLE GNRL -->
 
@@ -244,6 +249,78 @@ body.dark-mode .list-group-item:hover {
   margin: 0;
 }
 
+/* MENU */
+.layout {
+  display: flex;
+  margin: 0;
+  max-width: 100%;
+}
+
+.sidebar {
+  width: 259px;
+  background-color: #dff6f0;
+  padding: 0.5rem;
+  border-radius: 1;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  margin-right: auto;
+  
+  
+  /* Cambios clave para que se mueva con el scroll */
+  position: sticky;
+  top: 0;
+  height: fit-content; /* Ajusta la altura según el contenido */
+}
+
+.sidebar h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #006633;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+}
+
+.sidebar a:hover {
+  color: #ff5733;
+  padding-left: 5px;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+.layout {
+  display: flex;
+  align-items: flex-start;
+}
+
+.container {
+  flex: 1;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
 </style>
 
 <button class="toggle-dark" onclick="document.body.classList.toggle('dark-mode')">
@@ -281,15 +358,21 @@ body.dark-mode .list-group-item:hover {
 
 
   <!-- Botón lateral del índice -->
+     <!-- 
   <button class="btn btn-outline-success indice-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#indiceLateral" aria-controls="indiceLateral">
     ☰
-  </button>
+  </button>   
+     -->
+
 
   <!-- menu lateral desplegable -->
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="indiceLateral" aria-labelledby="indiceLateralLabel">
+
+    <!-- 
+
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="indiceLateral" aria-labelledby="indiceLateralLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="indiceLateralLabel">Contenido</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+      <button type="button" class="btn-close" databs-dismiss="offcanvas" aria-label="Cerrar"></button>
     </div>
     <div class="offcanvas-body">
       <ul class="list-group list-group-flush">
@@ -303,13 +386,31 @@ body.dark-mode .list-group-item:hover {
       </ul>
     </div>
   </div>
+   -->
+
 
     <!-- Fin del menu lateral desplegable  -->
 
 
+ <div class="menu">
+   <aside class="sidebar">
+    <h3>Menú</h3>
+    <ul>
+      <li><a href="#origen">Origen</a></li>
+      <li><a href="#casavolcan">Bienvenida</a></li>
+      <li><a href="#justificacion">Justificación</a></li>
+      <li><a href="#mvo">Misión, Visión, Objetivos</a></li>
+      <li><a href="#acthistorica">Actividad Histórica</a></li>
+      <li><a href="#actreciente">Actividad Reciente</a></li>
+      <li><a href="#registro">Registro</a></li>
+    </ul>
+  </aside>
+     
+
 
   <!-- Contenido  -->
-  <div class="container">
+  <div class="container"
+    <div class="container">
         <p id="origen">
             
            <strong>Origen de La Casa del Volcán.</strong> 
@@ -440,6 +541,7 @@ body.dark-mode .list-group-item:hover {
       ↑ Volver arriba
     </button>
   </div>
+</div>
     <!--  Fin del contenido  -->
 
   <footer>
