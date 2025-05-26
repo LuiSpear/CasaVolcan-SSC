@@ -17,22 +17,102 @@
       color: #333;
       font-size: 25px;
     }
+
+    /* Estructura principal */
+    .layout {
+      display: flex;
+      align-items: flex-start;
+      max-width: 100%;
+    }
+
+    .sidebar {
+      width: 259px;
+      background-color: #dff6f0;
+      padding: 0.5rem;
+      border-radius: 8px;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      height: fit-content;
+      margin-left: 1rem;
+    }
+
+    .sidebar h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #006633;
+      text-align: center;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar li {
+      margin: 10px 0;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: all 0.2s ease;
+      font-size: 1.2rem;
+    }
+
+    .sidebar a:hover {
+      color: #ff5733;
+      padding-left: 5px;
+    }
+
     .container {
+      flex: 1;
       max-width: 75%;
-      margin: 1rem auto 2rem auto; /* 1rem arriba, 2rem abajo */
-      margin-right: 5px; /* lo puedes mantener si quieres ese espacio lateral */
+      margin: 1rem auto;
       background: white;
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       padding: 1.5rem;
+      line-height: 1.9;
+      font-size: 1.1rem;
     }
 
-    p {
+    .container > p {
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 2rem;
       text-align: justify;
-      line-height: 1.8;
-      margin: 1rem 0;
-      font-size: 20px;
     }
+
+    .container > p strong {
+      display: block;
+      font-size: 1.6rem;
+      color: #006633;
+      margin-bottom: 0.5rem;
+    }
+
+    .container h2, .container h3 {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      color: #004d29;
+      border-bottom: 2px solid #006633;
+      padding-bottom: 0.4rem;
+    }
+
+    .container section {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      border-top: 1px solid #eee;
+      animation: fadein 0.6s ease-in;
+    }
+
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     .images {
       display: flex;
       flex-wrap: wrap;
@@ -40,6 +120,7 @@
       gap: 1rem;
       margin: 2rem 0;
     }
+
     .images img {
       width: 100%;
       max-width: 280px;
@@ -49,10 +130,12 @@
       object-fit: cover;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .images img:hover {
       transform: scale(1.05);
       box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
     }
+
     footer {
       font-size: medium;
       text-align: center;
@@ -62,355 +145,152 @@
       margin-top: 2rem;
       font-size: 17px;
     }
+
     .nav-links a:hover {
       color: #e04b2d;
     }
-    /*  
-    .dropdown {
-      position: relative;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #ff5733;
-      min-width: 160px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      border-radius: 5px;
-      z-index: 1;
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    .dropdown-content a {
-      color: white;
+
+    .toggle-dark {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 2000;
       padding: 10px 15px;
-      text-decoration: none;
+      background-color: #006633;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .banner-bienvenida {
+      position: relative;
+      width: 100%;
+      max-height: 400px;
+      overflow: hidden;
+      margin-bottom: 3rem;
+    }
+
+    .banner-bienvenida img {
+      width: 100%;
+      height: auto;
       display: block;
-    }
-    .dropdown-content a:hover {
-      background-color: #e14c2a;
-    }
-    .indice-btn {
-    position: fixed;
-    top: 80%;
-    left: 30px;
-    z-index: 1050;
-    font-size: 28px;
-    padding: 12px 20px;
-    border-radius: 10px;
-    background-color: #ff5733;
-    color: #fff;
-    border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      object-fit: cover;
+      max-height: 400px;
     }
 
-    .list-group-item:hover {
-  background-color: #f56d299d; 
-  color: #000;
-  cursor: pointer;
-  */
+    .banner-texto {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 2rem;
+      text-align: center;
+      border-radius: 12px;
+    }
 
+    .banner-texto h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .banner-texto p {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    /* Modo oscuro */
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .container {
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    }
+
+    body.dark-mode .container > p {
+      border-bottom: 1px solid #444;
+    }
+
+    body.dark-mode .container > p strong,
+    body.dark-mode h2,
+    body.dark-mode h3 {
+      color: #90ee90;
+      border-color: #90ee90;
+    }
+
+    body.dark-mode .sidebar {
+      background-color: #1b1b1b;
+    }
+
+    body.dark-mode .sidebar a {
+      color: #ccc;
+    }
+
+    body.dark-mode .sidebar a:hover {
+      color: #ff5733;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
-  <!-- FIN DEL STYLE GNRL -->
-
 </head>
 
 <body>
-    <!-- Estilo de boostrap blog-->
-<style
-    /* Estilo tipo blog limpio, inspirado en Bootstrap Blog */
-.container > p {
-  padding-bottom: 2rem;
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 2rem;
-}
+  <button class="toggle-dark" onclick="document.body.classList.toggle('dark-mode')">🌙 Modo Oscuro</button>
 
-.container > p strong {
-  display: block;
-  font-size: 1.6rem;
-  color: #006633;
-  margin-bottom: 0.5rem;
-}
-
-/* Mejoramos encabezados embebidos en texto */
-.container h2, .container h3 {
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  color: #004d29;
-  border-bottom: 2px solid #006633;
-  padding-bottom: 0.4rem;
-}
-
-/* Mejora de lectura general */
-.container {
-  line-height: 1.9;
-  font-size: 1.1rem;
-}
-
-/* Separadores suaves entre bloques grandes */
-.container section {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  border-top: 1px solid #eee;
-}
-
-/* Efecto de animación suave al cargar secciones */
-.container section {
-  animation: fadein 0.6s ease-in;
-}
-
-@keyframes fadein {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== MODO OSCURO ===== */
-body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-body.dark-mode .container {
-  background-color: #1e1e1e;
-  color: #e0e0e0;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-}
-
-body.dark-mode .container > p {
-  border-bottom: 1px solid #444;
-}
-
-body.dark-mode .container > p strong,
-body.dark-mode h2,
-body.dark-mode h3 {
-  color: #90ee90;
-  border-color: #90ee90;
-}
-
-body.dark-mode .list-group-item {
-  background-color: #2b2b2b;
-  color: #fff;
-}
-
-body.dark-mode .list-group-item:hover {
-  background-color: #444;
-}
-
-/* Botón para activar modo oscuro */
-.toggle-dark {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 2000;
-  padding: 10px 15px;
-  background-color: #006633;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-}
-
-.banner-bienvenida {
-  position: relative;
-  width: 100%;
-  max-height: 400px;
-  overflow: hidden;
-  margin-bottom: 3rem;
-}
-
-.banner-bienvenida img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  max-height: 400px;
-}
-
-.banner-texto {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
-  text-align: center;
-  border-radius: 12px;
-}
-
-.banner-texto h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.banner-texto p {
-  font-size: 1.2rem;
-  margin: 0;
-}
-
-/* MENU */
-.layout {
-  display: flex;
-  margin: 0;
-  max-width: 100%;
-}
-
-.sidebar {
-  width: 259px;
-  background-color: #dff6f0;
-  padding: 0.5rem;
-  border-radius: 1;
-  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-  margin-right: auto;
-  
-  
-  /* Cambios clave para que se mueva con el scroll */
-  position: sticky;
-  top: 0;
-  height: fit-content; /* Ajusta la altura según el contenido */
-}
-
-.sidebar h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #006633;
-  text-align: center;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar li {
-  margin: 10px 0;
-}
-
-.sidebar a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  transition: all 0.2s ease;
-  font-size: 1.2rem;
-}
-
-.sidebar a:hover {
-  color: #ff5733;
-  padding-left: 5px;
-}
-
-
-html {
-  scroll-behavior: smooth;
-}
-
-.layout {
-  display: flex;
-  align-items: flex-start;
-}
-
-.container {
-  flex: 1;
-}
-
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-</style>
-
-<button class="toggle-dark" onclick="document.body.classList.toggle('dark-mode')">
-  🌙 Modo Oscuro
-</button>
-  <!-- Barra de navegación superior -->
+  <!-- NAVBAR -->
   <header>
-        <div class="navbar">
-            <img src="/src/img/logo.png" alt="Logo Universidad de Colima" class="logo">
-            <nav>
-                  <ul class="nav-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="/src/pages/historia.html">Historia</a></li>
-                    <li><a href="/src/pages/faq.html">FAQ</a></li>
-                    <li><a href="/src/pages/fotos.html">Galería</a></li>
-                    <li><a href="/src/pages/redes.html">Redes Sociales</a></li>
-                    <li><a href="/src/pages/contacto.html">Contáctanos</a></li>
-                    
-                  </ul>          
-            </nav>
-          </div>
-
+    <div class="navbar">
+      <img src="/src/img/logo.png" alt="Logo Universidad de Colima" class="logo">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="/src/pages/historia.html">Historia</a></li>
+          <li><a href="/src/pages/faq.html">FAQ</a></li>
+          <li><a href="/src/pages/fotos.html">Galería</a></li>
+          <li><a href="/src/pages/redes.html">Redes Sociales</a></li>
+          <li><a href="/src/pages/contacto.html">Contáctanos</a></li>
+        </ul>          
+      </nav>
+    </div>
   </header>
 
-  <!-- Imagen de bienvenida -->
-<div class="banner-bienvenida">
-  <img src="/src/img/casa volcan.png" alt="Bienvenida Casa del Volcán">
-  <div class="banner-texto">
-    <h1>Historia La Casa del Volcán</h1>
-    <p>Descubre la historia, ciencia y cultura del Volcán de Colima</p>
-  </div>
-</div>
-
-
-
-
-  <!-- Botón lateral del índice -->
-     <!-- 
-  <button class="btn btn-outline-success indice-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#indiceLateral" aria-controls="indiceLateral">
-    ☰
-  </button>   
-     -->
-
-
-  <!-- menu lateral desplegable -->
-
-    <!-- 
-
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="indiceLateral" aria-labelledby="indiceLateralLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="indiceLateralLabel">Contenido</h5>
-      <button type="button" class="btn-close" databs-dismiss="offcanvas" aria-label="Cerrar"></button>
+  <!-- BANNER -->
+  <div class="banner-bienvenida">
+    <img src="/src/img/casa volcan.png" alt="Bienvenida Casa del Volcán">
+    <div class="banner-texto">
+      <h1>Historia La Casa del Volcán</h1>
+      <p>Descubre la historia, ciencia y cultura del Volcán de Colima</p>
     </div>
-    <div class="offcanvas-body">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"><a href="#origen" class="text-decoration-none">Origen de La Casa del Volcán</a></li>
-        <li class="list-group-item"><a href="#casavolcan" class="text-decoration-none">Bienvenido a la Casa del Volcán</a></li>
-        <li class="list-group-item"><a href="#justificacion" class="text-decoration-none">Justificación</a></li>
-        <li class="list-group-item"><a href="#mvo" class="text-decoration-none">Misión, Visión y Objetivos</a></li>
-        <li class="list-group-item"><a href="#acthistorica" class="text-decoration-none">Actividad histórica del Volcán de Fuego de Colima</a></li>
-        <li class="list-group-item"><a href="#actreciente" class="text-decoration-none">Actividad reciente</a></li>
-        <li class="list-group-item"><a href="#registro" class="text-decoration-none">Título de registro de La Casa del Volcán</a></li>
+  </div>
+
+  <!-- CONTENEDOR PRINCIPAL CON MENÚ Y CONTENIDO -->
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>Menú</h3>
+      <ul>
+        <li><a href="#origen">Origen</a></li>
+        <li><a href="#casavolcan">Bienvenida</a></li>
+        <li><a href="#justificacion">Justificación</a></li>
+        <li><a href="#mvo">Misión, Visión, Objetivos</a></li>
+        <li><a href="#acthistorica">Actividad Histórica</a></li>
+        <li><a href="#actreciente">Actividad Reciente</a></li>
+        <li><a href="#registro">Registro</a></li>
       </ul>
-    </div>
-  </div>
-   -->
-
-
-    <!-- Fin del menu lateral desplegable  -->
-
-
- <div class="menu">
-   <aside class="sidebar">
-    <h3>Menú</h3>
-    <ul>
-      <li><a href="#origen">Origen</a></li>
-      <li><a href="#casavolcan">Bienvenida</a></li>
-      <li><a href="#justificacion">Justificación</a></li>
-      <li><a href="#mvo">Misión, Visión, Objetivos</a></li>
-      <li><a href="#acthistorica">Actividad Histórica</a></li>
-      <li><a href="#actreciente">Actividad Reciente</a></li>
-      <li><a href="#registro">Registro</a></li>
-    </ul>
-  </aside>
-     
+    </aside>
 
 
   <!-- Contenido  -->
-  <div class="container"
     <div class="container">
+      
         <p id="origen">
             
            <strong>Origen de La Casa del Volcán.</strong> 
@@ -438,6 +318,7 @@ body {
         <br>
       Este espacio se encuentra ubicado a 15.7 km al suroeste de la cima del Volcán de Fuego de Colima, en un predio de más de 20,000 m² con instalaciones como museo, observatorio, área infantil, tienda, cafetería y más.
     </p>
+    
 
     <p id="justificacion">
         <strong>Justificación</strong>
