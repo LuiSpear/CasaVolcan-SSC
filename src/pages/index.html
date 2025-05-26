@@ -6,15 +6,16 @@
   <title>La Casa del Volcán - Universidad de Colima</title>
   <link rel="stylesheet" href="/src/css/styles.css">
   <link rel="icon" type="image/png" href="/src/img/icono.png">
+</head>
 
+<body>
   <!-- SDK de Facebook -->
   <div id="fb-root"></div>
   <script async defer crossorigin="anonymous"
     src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v18.0"
     nonce="abc123">
   </script>
-</head>
-<body>
+
   <header class="header">
     <div class="navbar">
       <img src="/src/img/logo.png" alt="Logo Universidad de Colima" class="logo">
@@ -39,7 +40,7 @@
         <div class="overlay">
           <h1>Bienvenidos a la Casa del Volcán</h1>
           <p>Explora y conoce el fascinante mundo del Volcán de Colima</p>
-      
+
           <div class="social-stats">
             <div class="stat">
               <span class="number">15,000</span>
@@ -50,13 +51,13 @@
               <span class="label">Me gusta</span>
             </div>
           </div>
-      
+
           <a href="/src/pages/contacto.html" class="cta-button">Realizar un tour</a>
         </div>
       </div>
     </div>
   </header>
-  
+
   <main>
     <section class="section" id="inicio">
       <h2>La <span class="highlight">Casa</span> del <span class="highlight2">Volcán</span></h2>
@@ -66,7 +67,7 @@
           En la Casa del Volcán, puedes descubrir información única sobre el Volcán de Colima. Desde su monitoreo en tiempo real hasta la historia detrás de este majestuoso lugar.
           <a href="/src/pages/contacto.html" class="highlight2" style="margin-left: 10px; cursor: pointer; text-decoration: underline;">
             Agendar una visita
-            </a>
+          </a>
         </p>
       </div>
     </section>
@@ -77,25 +78,58 @@
         <p>
           La Casa del Volcán fue creada como un centro para la educación, investigación y divulgación sobre el Volcán de Colima. Desde sus inicios, ha sido un lugar clave para el aprendizaje y la interacción con la naturaleza y la ciencia.
           <a href="/src/pages/historia.html" class="highlight2" style="margin-left: 10px; cursor: pointer; text-decoration: underline;">
-    Ir a Historia
-  </a>
+            Ir a Historia
+          </a>
         </p>
         <img src="/src/img/casavolcan.jpg" alt="La Casa del Volcán" class="image">
       </div>
     </section>
 
-    <section class="section" id="ubicacion">
-      <h2>Ubicación</h2>
-      <div class="content">
-        <p>
-          Encuentra la Casa del Volcán en el siguiente mapa. ¡Te esperamos para que vivas una experiencia única!
-        </p>
-        <div class="map-container">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30109.83061148997!2d-103.71283702568358!3d19.380891000000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84255d6e5984f2b1%3A0xb35e9eed742bf12b!2sLa%20Casa%20del%20Volc%C3%A1n%20-%20Universidad%20de%20Colima!5e0!3m2!1ses!2smx!4v1746420458123!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-    </section>
+    <!-- Sección: Ubicación -->
+<section class="section" id="ubicacion">
+  <h2>Ubicación</h2>
+  <div class="content">
+    <p>
+      Encuentra la Casa del Volcán en el siguiente mapa. ¡Te esperamos para que vivas una experiencia única!
+    </p>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30109.83061148997!2d-103.71283702568358!3d19.380891000000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84255d6e5984f2b1%3A0xb35e9eed742bf12b!2sLa%20Casa%20del%20Volc%C3%A1n%20-%20Universidad%20de%20Colima!5e0!3m2!1ses!2smx!4v1746420458123!5m2!1ses!2smx"
+        width="100%"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
 
+<!-- Sección: Contacto -->
+<section class="section" id="contacto">
+  <h2>Contacto</h2>
+  <div class="content">
+    <div class="contacto-info">
+      <p><strong>Correo Electrónico:</strong> <a href="mailto:lacasadelvolcan@ucol.mx">lacasadelvolcan@ucol.mx</a></p>
+      <p><strong>Horario de Atención:</strong><br>Jueves - Sábado: 9:00 am - 10:00 pm</p>
+      <p><strong>Teléfono:</strong> <a href="tel:3123161134">312 316 1134</a></p>
+      <p>Para visitas escolares, se recomienda traer lista impresa de participantes.</p>
+    </div>
+    <div class="map-container">
+      <!-- Puedes duplicar el mapa si lo deseas aquí -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30109.83061148997!2d-103.71283702568358!3d19.380891000000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84255d6e5984f2b1%3A0xb35e9eed742bf12b!2sLa%20Casa%20del%20Volc%C3%A1n%20-%20Universidad%20de%20Colima!5e0!3m2!1ses!2smx!4v1746420458123!5m2!1ses!2smx"
+        width="100%"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
   </main>
 
   <footer>
@@ -106,15 +140,12 @@
         <li><a href="https://www.facebook.com/udecoficial" target="_blank">
           <img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"> Facebook UdeC
         </a></li>
-      
         <li><a href="https://twitter.com/udec_oficial" target="_blank">
           <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" alt="Twitter" width="24"> X UdeC
         </a></li>
-      
         <li><a href="https://www.facebook.com/profile.php?id=100068967222205" target="_blank">
           <img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"> Facebook CUEV
         </a></li>
-      
         <li><a href="https://portal.ucol.mx/cueiv/" target="_blank">
           <img src="https://cdn-icons-png.flaticon.com/24/1828/1828490.png" alt="Web"> Portal CUEIV
         </a></li>
@@ -122,10 +153,12 @@
     </div>
   </footer>
 
+  <!-- Script de animación al hacer scroll -->
   <script>
     const inicio = document.getElementById('inicio');
     const historia = document.getElementById('historia');
     const ubicacion = document.getElementById('ubicacion');
+    const contacto = document.getElementById('contacto');
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -136,20 +169,19 @@
         });
       },
       {
-        threshold: 0.2, // Activa la animación cuando el 20% del elemento es visible
+        threshold: 0.2,
       }
     );
 
     observer.observe(inicio);
     observer.observe(historia);
     observer.observe(ubicacion);
+    observer.observe(contacto);
   </script>
+
+  <!-- Botón modo oscuro -->
+  <button class="toggle-dark" onclick="document.body.classList.toggle('dark-mode')">
+    🌙 Modo Oscuro
+  </button>
 </body>
-
-<button class="toggle-dark" onclick="document.body.classList.toggle('dark-mode')">
-  🌙 Modo Oscuro
-</button>
 </html>
-
-
-

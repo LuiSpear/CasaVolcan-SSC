@@ -1,9 +1,8 @@
-/* Importar la fuente Montserrat desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif; /* Cambiar la fuente a Montserrat */
+  font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
   color: #333;
   background-color: #f3f3f3;
@@ -29,7 +28,7 @@ a {
   list-style: none;
   display: flex;
   gap: 15px;
-  }
+}
 
 .nav-links li {
   display: inline;
@@ -40,40 +39,54 @@ a {
   font-weight: bold;
   padding: 5px 10px;
   border-radius: 5px;
-  transition: background-color 0.3s;
   font-size: 20px;
+  transition: background-color 0.3s ease;
 }
 
 .nav-links a:hover {
-  background-color: #ff5733;
-  cursor: pointer;
+  color: white;
+  background-color: #cc4422;
+  outline: solid #ff5733;
 }
 
 .logo {
   height: 70px;
 }
 
+/* HERO */
+
 .hero {
   position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
   text-align: center;
   color: white;
 }
 
-.hero img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.hero-text {
+#heroVideo {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transform: translate(-50%, -50%);
+  z-index: -1;
 }
 
-.hero-text .overlay {
-  background-color: rgba(0, 0, 0, 0.6);
+.hero-text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
   padding: 20px;
   border-radius: 10px;
 }
@@ -90,12 +103,13 @@ a {
 
 .cta-button {
   display: inline-block;
-  margin-top: 15px;
+  margin-top: 20px;
   padding: 10px 20px;
-  background-color: #ff5733;
+  background-color: #ff5722;
   color: white;
   font-weight: bold;
   border-radius: 5px;
+  font-size: 1.2em;
   transition: background-color 0.3s;
 }
 
@@ -103,10 +117,12 @@ a {
   background-color: #ff5733;
 }
 
+/* SECCIONES GENERALES */
+
 .section {
   padding: 40px 20px;
   background-color: white;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 20px;
   border-radius: 10px;
 }
@@ -114,7 +130,7 @@ a {
 .section h2 {
   text-align: center;
   font-size: 2em;
-  color: #000000;
+  color: #000;
 }
 
 .highlight {
@@ -131,7 +147,6 @@ a {
   align-items: center;
   gap: 20px;
   margin: 20px 0;
-  font-size: 20px;
 }
 
 .content img {
@@ -143,12 +158,49 @@ a {
 .content p {
   width: 55%;
   text-align: justify;
-  font-size: 30px;
-
+  font-size: 1.3em;
 }
 
+/* SECCIÓN UBICACIÓN Y CONTACTO UNIFICADAS */
+
+.section .content,
+#contacto .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+#ubicacion .content p,
+#contacto .contacto-info {
+  flex: 1;
+  min-width: 280px;
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+.map-container {
+  flex: 1;
+  min-width: 280px;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.contacto-info a {
+  color: #ff5733;
+}
+
+.contacto-info a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+
 footer {
-  font-size: medium;
   text-align: center;
   padding: 20px;
   background-color: #ff5733;
@@ -158,7 +210,6 @@ footer {
 .footer-content p {
   margin: 5px 0;
   font-size: 19px;
-
 }
 
 .social-links {
@@ -177,162 +228,10 @@ footer {
 }
 
 .social-links a:hover {
-  color: #ff5733;
+  color: #ffd6cc;
 }
 
-.hero {
-  position: relative;
-  width: 100%;
-  height: 100vh; 
-  overflow: hidden;
-}
-
-#heroVideo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
-  transform: translate(-50%, -50%);
-  z-index: -1; 
-}
-
-.hero-text {
-  position: relative;
-  z-index: 1; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  text-align: center;
-  color: white; 
-}
-
-.overlay {
-  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejorar la legibilidad */
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.cta-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #ff5722; 
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 1.2em;
-}
-
-.cta-button:hover {
-  background-color: #ff5733; 
-}
-
-#inicio,
-    #historia {
-      opacity: 0;
-      transform: translateX(-100px);
-      transition: opacity 1s ease-out, transform 1s ease-out;
-    }
-
-    #historia {
-      transform: translateX(100px); 
-    }
-
-    #inicio.slide-in,
-    #historia.slide-in {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .nav-links a {
-      color: white; 
-      text-decoration: none; 
-      transition: color 0.3s ease; 
-    }
-
-    .nav-links a:hover {
-      color: #ff5733; 
-      color: white;
-      outline: solid #ff5733; /* un rojo más oscuro tipo highlight */
-      background-color: #cc4422; /* ligeramente más oscuro que el original */
-    }
-    
-    .contacto-section {
-      background-color: white;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-      margin: 20px;
-      border-radius: 10px;
-    }
-    
-    .contacto-contenido {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 40px;
-      padding: 20px;
-    }
-    
-    .contacto-info {
-      flex: 1;
-      min-width: 250px;
-      font-size: 1.1em;
-    }
-    
-    .contacto-info a {
-      color: #ff5733;
-      text-decoration: none;
-    }
-    
-    .contacto-info a:hover {
-      text-decoration: underline;
-    }
-    
-    .contacto-formulario {
-      flex: 1;
-      min-width: 280px;
-    }
-    
-    .contacto-formulario label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-    
-    .form-control {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      transition: border-color 0.3s ease;
-      box-sizing: border-box;
-    }
-    
-    .form-control:focus {
-      border-color: #ff5733;
-      outline: none;
-    }
-
-    /* Estilo para la sección de ubicación */
-  #ubicacion {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-  #ubicacion {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-  #ubicacion .map-container {
-  margin-left: 7%;
-  margin-top: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
+/* ESTADÍSTICAS DE REDES */
 
 .social-stats {
   display: flex;
@@ -355,7 +254,6 @@ footer {
 .stat .number {
   font-size: 1.6rem;
   font-weight: bold;
-  display: block;
 }
 
 .stat .label {
@@ -363,8 +261,27 @@ footer {
   opacity: 0.9;
 }
 
+/* ANIMACIÓN AL HACER SCROLL */
 
-/* Botón de modo oscuro */
+#inicio,
+#historia,
+#ubicacion,
+#contacto {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+#inicio.slide-in,
+#historia.slide-in,
+#ubicacion.slide-in,
+#contacto.slide-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* BOTÓN MODO OSCURO */
+
 .toggle-dark {
   position: fixed;
   bottom: 30px;
@@ -387,21 +304,23 @@ footer {
   transform: scale(1.05);
 }
 
-/* MODO OSCURO COMPLETO */
+/* MODO OSCURO */
+
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
 }
 
-body.dark-mode .navbar {
+body.dark-mode .navbar,
+body.dark-mode footer {
   background-color: #1e1e1e;
 }
 
 body.dark-mode .section,
-body.dark-mode .footer-content {
+body.dark-mode .footer-content,
+body.dark-mode .contacto-info {
   background-color: #1e1e1e;
   color: #e0e0e0;
-  box-shadow: 0 4px 8px rgba(255,255,255,0.05);
 }
 
 body.dark-mode .hero-text h1,
@@ -414,15 +333,30 @@ body.dark-mode .highlight2 {
   color: #90ee90;
 }
 
-body.dark-mode footer {
-  background-color: #1e1e1e;
-  color: #90ee90;
-}
-
 body.dark-mode .social-links a {
   color: #90ee90;
 }
 
 body.dark-mode .overlay {
   background: rgba(0, 0, 0, 0.7);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .content img,
+  .map-container,
+  .content p,
+  .contacto-info {
+    width: 100%;
+  }
+
+  .cta-button {
+    font-size: 1em;
+    padding: 10px 15px;
+  }
 }
