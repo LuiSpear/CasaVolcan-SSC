@@ -32,7 +32,7 @@
       border-radius: 8px;
       box-shadow: 2px 0 10px rgba(0,0,0,0.1);
       position: sticky;
-      top: 0;
+      top: 60px;
       height: fit-content;
       margin-left: 1rem;
     }
@@ -112,6 +112,34 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+.imagess {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.imagess img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagess img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.imagess figcaption {
+  margin-top: 8px;
+  font-size: 0.95em;
+  font-style: italic;
+  color: #4da6ff;
+}
+
+    
 
     .images {
       display: flex;
@@ -136,6 +164,8 @@
       box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
     }
 
+
+  
     footer {
       font-size: medium;
       text-align: center;
@@ -146,8 +176,39 @@
       font-size: 17px;
     }
 
+    .navbar {
+      background-color: #ff5733;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+        .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      display: inline;
+    }
+
+    .nav-links a {
+      color: white;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      font-size: 20px;
+    }
+
     .nav-links a:hover {
-      color: #e04b2d;
+      background: #e04b2d;
+      color: white;
     }
 
     
@@ -242,6 +303,49 @@
     html {
       scroll-behavior: smooth;
     }
+
+    /* monitoreos desplegables */
+    .submenu {
+  position: relative;
+}
+
+.submenu-items {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background-color: #dff6f0;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+  padding: 0.5rem;
+  z-index: 999;
+  list-style: none;
+  min-width: 220px;
+}
+
+.submenu:hover .submenu-items {
+  display: block;
+}
+
+.submenu-items li {
+  margin: 0.3rem 0;
+}
+
+.submenu-items a {
+  color: #333;
+  text-decoration: none;
+  font-weight: normal;
+  display: block;
+}
+
+.submenu-items a:hover {
+  color: #ff5733;
+  padding-left: 5px;
+}
+
+
+
+
   </style>
 </head>
 
@@ -277,17 +381,28 @@
   <!-- CONTENEDOR PRINCIPAL CON MENÚ Y CONTENIDO -->
   <div class="layout">
     <aside class="sidebar">
-      <h3>Menú</h3>
-      <ul>
-        <li><a href="#origen">Origen</a></li>
-        <li><a href="#casavolcan">Bienvenida</a></li>
-        <li><a href="#justificacion">Justificación</a></li>
-        <li><a href="#mvo">Misión, Visión, Objetivos</a></li>
-        <li><a href="#acthistorica">Actividad Histórica</a></li>
-        <li><a href="#actreciente">Actividad Reciente</a></li>
-        <li><a href="#registro">Registro</a></li>
-      </ul>
-    </aside>
+        <ul>
+          <li><a href="#origen">Origen</a></li>
+          <li><a href="#justificacion">Justificación</a></li>
+          <li><a href="#mvo">Misión, Visión, Objetivos</a></li>
+          <li><a href="#acthistorica">Actividad Histórica</a></li>
+          <li><a href="#actreciente">Actividad Reciente</a></li>
+          
+          <!-- Submenú desplegable -->
+          <li class="submenu">
+            <a href="#monitoreo">Tipos Monitoreos ▸</a>
+            <ul class="submenu-items">
+              <li><a href="#sismico">Monitoreo Sísmico</a></li>
+              <li><a href="#geodesico">Monitoreo Geodésico</a></li>
+              <li><a href="#geoquimico">Monitoreo Geoquímico</a></li>
+              <li><a href="#visual">Monitoreo Visual</a></li>
+              <li><a href="#satelital">Monitoreo: Estación de Vigilancia</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#registro">Registro</a></li>
+        </ul>
+      </aside>
 
 
   <!-- Contenido  -->
@@ -297,68 +412,59 @@
             
            <strong>Origen de La Casa del Volcán.</strong> 
             <br>
-            Tuvo su origen en el año 1994 cuando la Universidad de Colima construyó dos
-            edificios (La Casa del Volcán y el Observatorio Vulcanológico) con la finalidad de
-            promover el estudio de la actividad volcánica en la región. En el año de 2006, a
-            través de un proyecto conjunto entre la Universidad de Colima, el Gobierno del
-            Estado de Colima y el Gobierno Federal, se iniciaron los trabajos de
-            reacondicionamiento del edificio actual, mismo que fue reinaugurado el 26 de junio
-            de 2007.
-            La Casa del Volcán® consta de un predio de 20,565 m2 y sus instalaciones
-            comprenden un museo dedicado a la actividad volcánica, un observatorio para el
-            monitoreo volcánico, tienda para venta de libros, fotografías, artesanías locales,
-            regalos, productos alimenticios de la región (café, miel, sal, etc.) una cafetería-
-            restaurante, un área de juegos infantiles, un salón para cursos y conferencias, un
-            área de binoculares con excelentes vistas hacia los volcanes, amplios jardines,
-            estacionamiento privado, cocina y servicios sanitarios.    
+            Este espacio se encuentra en el km 15 de la carretera Villa de Álvarez - El Chivato - Naranjal, a una altura de 1225 m sobre el nivel del mar y a una distancia de 15.7 km al suroeste de la cima del Volcán de Fuego de Colima. Su ubicación la sitúa en las coordenadas geográficas 19°22´53" Latitud Norte y 103°40´28" Longitud Oeste.
+            <br>
+            La Casa del Volcán® consta de un predio de 20,565 m2 y sus instalaciones comprenden un museo dedicado a la actividad volcánica, un observatorio para el monitoreo volcánico, tienda/galería para venta de libros, fotografías, artesanías locales, regalos, productos alimenticios de la región (café, miel, sal, etc.) una cafetería-restaurante, un área de juegos infantiles, un salón para cursos y conferencias, un área de binoculares con excelentes vistas hacia los volcanes, amplios jardines, estacionamiento privado, cocina y servicios sanitarios.
+            <br>
+            Este espacio se encuentra ubicado a 15.7 km al suroeste de la cima del Volcán de Fuego de Colima, en un predio de más de 20,000 m² con instalaciones como museo, observatorio, área infantil, tienda, cafetería y más.
+
+            <div class="imagess">
+            <img src="/src/img/origen.jpg">
+            </div>  
+            Tuvo su origen en el año 1997 cuando la Universidad de Colima construyó dos edificios (La Casa del Volcán y el Observatorio Vulcanológico) con la finalidad de promover el estudio de la actividad volcánica en la región.  En el año de 2006, a través de un proyecto conjunto entre la Universidad de Colima, el Gobierno del Estado de Colima y el Gobierno Federal, se iniciaron los trabajos de reacondicionamiento del edificio actual, mismo que fue inaugurado el 26 de junio de 2007. Finalmente, en el marco del 83 aniversario de la fundación de la Universidad de Colima, el 21 de octubre de 2023, La Casa del Volcán fue reinaugurada por el Dr. Christian Torres Ortiz Zermeño, rector de la Universidad de Colima y el Dr. Mauricio Bretón González, creador del proyecto de La Casa del Volcán.
+             <div class="imagess">
+               <img src="/src/img/christian torres.jpg">
+               <figcaption><em>Dr. Christian Torres Ortiz Zermeño, rector de la Universidad de Colima y el Dr. Mauricio Bretón González, creador del proyecto de La Casa del Volcán..</em></figcaption>
+            </div>
+ 
          </p>
 
-         
-
-    <p id="casavolcan">
-        <strong>Bienvenido a La Casa del Volcán</strong>
-        <br>
-      Este espacio se encuentra ubicado a 15.7 km al suroeste de la cima del Volcán de Fuego de Colima, en un predio de más de 20,000 m² con instalaciones como museo, observatorio, área infantil, tienda, cafetería y más.
-    </p>
-    
+             
 
     <p id="justificacion">
         <strong>Justificación</strong>
         <br>
-            Un Centro de información sobre la actividad volcánica es esencial para la mitigación
-            del riesgo volcánico, pues está comprobado que una población bien informada
-            sobre los peligros volcánicos a los que está sometida tiene una capacidad de
-            respuesta superior al resto de los individuos carentes de estos conocimientos,
-            reduciendo el impacto que puede suponer una erupción volcánica.
-            La zona cercana al Volcán de Fuego de Colima es una región en la que habitan más
-            de 450 mil personas en áreas de alto y mediano riesgo. Este índice de población
-            requiere la educación y difusión sobre el fenómeno volcánico y sus escenarios
-            eruptivos con el fin de estar en mejores condiciones para afrontar una futura
-            erupción.   
+            Un Centro de información sobre la actividad volcánica es esencial para la mitigación del riesgo volcánico, pues está comprobado que una población bien informada sobre los peligros volcánicos a los que está sometida tiene una capacidad de respuesta superior al resto de los individuos carentes de estos conocimientos, reduciendo el impacto que puede suponer una erupción volcánica.
+            <br>
+            La zona cercana al Volcán de Fuego de Colima es una región en la que habitan más de 500 mil personas en áreas de alto y mediano riesgo. Este índice de población requiere la educación y difusión sobre el fenómeno volcánico y el conocimiento de sus escenarios eruptivos con el fin de estar en mejores condiciones para afrontar una futura erupción.
+ 
      </p>
 
     <p id="mvo">
         <strong>Misión, Visión y Objetivos</strong> 
         <br>
-            La misión de la Casa del Volcán® es ser un centro de divulgación de la actividad volcánica que difunda el conocimiento sobre el vulcanismo del planeta en general y, en particular, sobre los procesos eruptivos del Complejo Volcánico de Colima, que incluye a los volcanes de Fuego y Nevado. Este espacio ha sido diseñado para permitir un acercamiento directo a los peligros volcánicos que afectan la región del occidente de México, con el propósito de fortalecer la conciencia de la comunidad en materia de protección civil. Así, se busca mejorar la percepción del riesgo volcánico en la región mediante el desarrollo de estrategias que ayuden a la población a comprender cuáles son los peligros, cómo afectan su entorno y de qué manera pueden ser mitigados.
+            Somos un Centro de divulgación de la actividad volcánica que difunde el conocimiento sobre el vulcanismo del planeta en general y los procesos eruptivos del Complejo Volcánico de Colima, que incluye a los volcanes de Fuego y Nevado. El espacio está diseñado para conocer de cerca los peligros volcánicos que afectan a los estados de Colima, Jalisco y Michoacán principalmente, con la finalidad de fortalecer la conciencia de la comunidad en materia de protección civil, mejorando la percepción sobre el riesgo volcánico en la región, desarrollando estrategias que le permitan a la población comprender cuáles son los peligros volcánicos y cómo estos afectan a la región, así como la manera de mitigarlos.
             <br>
             La visión de la Casa del Volcán® es convertir a la región de Colima en un Geoparque reconocido por la UNESCO, delimitando un territorio de elevado interés científico en términos de sus formas y procesos volcánicos. Además del valor científico, se busca que este territorio tenga un fuerte componente sociocultural, al considerar cómo las comunidades humanas han habitado, aprovechado y convivido con las características del relieve volcánico. Como geoparque, se aspira a desarrollar proyectos socioeconómicos vinculados al turismo sostenible, incluyendo modalidades como el ecoturismo, turismo rural, geoturismo y volcanoturismo, promoviendo así el desarrollo integral de la región.
             <br>
             Los objetivos de la Casa del Volcán® son:
 
-            -Desarrollar un sitio con infraestructura adecuada para que los visitantes conozcan los procesos eruptivos de un volcán activo.
             <br>
-           - Mostrar los peligros asociados a la actividad del Volcán de Fuego de Colima y enseñar medidas de protección antes, durante y después de una erupción, incluyendo rutas de evacuación, centros de reunión y refugios temporales.
+            •	Desarrollar un sitio en el que el visitante disponga de áreas con infraestructura propicia para conocer los procesos eruptivos del volcán de Fuego de Colima tanto en el pasado como en el presente. 
             <br>
-           - Promover el conocimiento de la biodiversidad existente en la zona del Complejo Volcánico de Colima.
+           •	Mostrar el funcionamiento de los sistemas de monitoreo con los que trabaja el Centro Universitario de Estudios Vulcanológicos de la Universidad de Colima a través del apoyo de sus dos áreas: El Observatorio Vulcanológico y la Red Sísmica de Colima; todo ello realizado desde un sitio seguro, pero al mismo tiempo en estrecho contacto con los activos procesos volcánicos.
             <br>
-           - Exhibir el funcionamiento de los sistemas de vigilancia utilizados por el Centro Universitario de Estudios Vulcanológicos de la Universidad de Colima, a través del Observatorio Vulcanológico y la Red Sísmica de Colima, todo ello desde un entorno seguro y en contacto con la actividad volcánica.
+           •	Mostrar cuáles son los peligros ligados a la actividad del Volcán de Fuego de Colima y enseñar al visitante las medidas de protección antes, durante y después de una erupción volcánica, conociendo las rutas de evacuación establecidas, los sitios de reunión de la localidad, albergues y refugios temporales.
             <br>
-           - Ofrecer un espacio recreativo, cultural, gastronómico y de capacitación especializada que impulse el turismo, incluyendo sus vertientes de geoturismo y volcanoturismo.
+           •	Conocer la biodiversidad existente en la zona del Complejo Volcánico de Colima.
             <br>
-           - Crear productos de turismo volcánico que puedan ser aprovechados por la sociedad y el sector económico y empresarial, siempre con el objetivo de conservar el patrimonio natural y cultural relacionado con los volcanes.
-
-
+            •	Ofrecer un espacio recreativo, artístico-cultural, gastronómico y de capacitación especializada que fomente el turismo y dos de sus vertientes: el geoturismo y el volcanoturismo.  
+            <br>
+            •	Crear productos de turismo volcánico para que el conjunto de la sociedad, así como el tejido económico y empresarial, puedan ponerlos en explotación siempre con el objetivo fundamental que se conserve ese patrimonio natural y cultural vinculado con los volcanes.
+        
+           <div class="imagess">
+            <img src="/src/img/volcaaan.jpg">
+           </div>
     </p>
 
     <p id="acthistorica">
@@ -378,13 +484,138 @@
         la caída de bombas volcánicas, flujos piroclásticos, lluvia de ceniza, flujos de lodo
         (lahares) entre otros.   
      </p>
+
+          <div class="imagess">
+            <img src="/src/img/antiguo volcan.jpg">
+            <figcaption><em>Volcán de Fuego de Colima 1903.</em></figcaption>
+          </div>
     <p id="actreciente">
         <strong> Actividad reciente </strong>
         <br>
         En los últimos años, el Volcán de Fuego de Colima ha presentado dos principales
         tipos de actividad, una de carácter efusivo, en donde se han generado domos de
         lava, los cuales al rebasar los límites del cráter generan flujos de lava y derrumbes
-        de material incandescente hacia los flancos del volcán.    </p>
+        de material incandescente hacia los flancos del volcán.   
+        <br>
+        <br>
+        ¿CÓMO SE VIGILA UN VOLCÁN?
+          <div class="imagess">
+            <img src="/src/img/vigilacionvolcan.jpg">
+            <figcaption><em>Monitoreo Volcánico 2023, adaptación del esquema del USGS.</em></figcaption>
+          </div>
+
+            Las erupciones volcánicas normalmente van precedidas de señales anómalas que pueden indicar su próxima ocurrencia y que se denominan precursores. La única manera de detectarlas es realizar una vigilancia volcánica adecuada empleando técnicas diferentes y realizando un análisis conjunto de los datos obtenidos. Este trabajo coordinado ayuda a mejorar los pronósticos de cómo, dónde y cuándo tendrá lugar la próxima erupción volcánica.
+
+            La mayoría de las veces antes de una erupción, los volcanes presentan diferentes cambios que pueden ser detectados con instrumentos muy sofisticados. La vigilancia o monitoreo volcánico son sin lugar a duda la clave para que los habitantes puedan estar seguros en caso de una erupción.
+            <br>
+            Hoy día muchos volcanes activos en el mundo se encuentran vigilados por científicos. Esta vigilancia ha permitido hacer pronósticos de erupciones volcánicas con varias horas de anticipación, permitiendo que los habitantes evacuen las zonas cercanas al volcán, salvando sus vidas. El monitoreo puede dividirse en:
+            <br>
+            •	Monitoreo Sísmico
+            <br>
+            •	Monitoreo Geodésico
+            <br>
+            •	Monitoreo Geoquímico
+            <br>
+            •	Monitoreo Visual
+            <br>
+            •	Monitoreo Satelital 
+       </p>
+
+    <p id="monitoreo">
+      <strong>Monitoreo Volcánico</strong>
+      <br> 
+        Además de los métodos clásicos de monitoreo volcánico, existen técnicas complementarias que mejoran la detección de actividad. El monitoreo hidrológico analiza cambios en pozos y manantiales, como variaciones en caudal o temperatura, que pueden indicar movimiento magmático. El monitoreo térmico utiliza cámaras infrarrojas para detectar zonas con aumento de temperatura en la superficie del volcán.
+
+        Otra técnica innovadora es el análisis de la vegetación, que detecta alteraciones en plantas expuestas a gases volcánicos, mediante imágenes satelitales. También se emplean sistemas de fibra óptica, capaces de registrar vibraciones subterráneas con gran sensibilidad a través de la técnica DAS. Por último, el radar InSAR permite medir con precisión deformaciones milimétricas del terreno, señalando posibles acumulaciones de magma.
+
+        Estas herramientas avanzadas complementan la vigilancia tradicional y fortalecen los sistemas de alerta temprana.
+
+          <div class="imagess">
+            <img src="/src/img/Dron-para-monitorear-el-Volcan-de-Colima.jpg">
+            <figcaption><em>Dron para monitorear el Volcán de Colima.</em></figcaption>
+          </div>
+
+    
+        <p id="sismico">
+        <strong>Monitoreo Sísmico</strong>
+        <br>
+          La sismología (del griego, seísmos = movimiento) es la parte de la geofísica que se dedica al estudio de terremotos y otros eventos generadores de ondas sísmicas. Una onda sísmica es una onda elástica que se transmite por el interior de la tierra. La sismología es una de las técnicas más antiguas que permiten conocer el estado de un volcán. Mediante el análisis de las distintas señales sísmicas asociadas a la actividad volcánica se puede obtener información de posibles intrusiones magmáticas, alteraciones de una cámara magmática pre-existente, ascenso de magma ante una inminente erupción y un largo etcétera. Prácticamente todas las erupciones volcánicas vienen precedidas de señales sísmicas, días, meses o años antes de producirse. Además, tanto éstas como otro tipo de señales pueden persistir durante y después de las erupciones.
+          Por medio de sismómetros, se puede conocer el estado de actividad de un volcán, debido a que el magma y los gases al ascender a la superficie van rompiendo la roca que se encuentra a su paso generando sismos, los cuales suelen ser de pequeña magnitud y sólo pueden ser detectados con estos instrumentos. 
+          El seguimiento de la actividad sísmica es la técnica de vigilancia de volcanes más antigua que se utiliza. La Red Sísmica Telemétrica del Estado de Colima conocida como RESCO, incorporada al CUEV, es la responsable del monitoreo sísmico del Volcán de Colima.
+          La actividad volcánica produce un amplio espectro de señales sísmicas y acústicas cuyas características proporcionan pistas importantes sobre los procesos magmáticos. Los sismos producidos por los volcanes no tienen relación con los que son generados por fallas tectónicas y la metodología de observación para la sismicidad volcánica es muy diferente. Las fuentes o mecanismos que generan sismos en los volcanes son mucho más complejas y sus mecanismos todavía no han logrado ser comprendidos completamente.
+          Entre las fuentes que originan los sismos de origen volcánico están el rompimiento de la roca encajonante, por cambio de esfuerzos asociados al magma en movimiento (eventos de alta frecuencia (HFs), resonancias generadas por movimientos de fluidos (sismos de largo periodo (LPs) y tremor), explosiones producto de una sobrepresión en el conducto y/o domo, derrumbes y flujos piroclásticos sobre las laderas del volcán y flujos de lodo o escombros conocidos como lahares que bajan por las barrancas cuando ocurren altas precipitaciones de lluvia en el volcán.
+
+          <div class="imagess">
+            <img src="/src/img/sismico.png">
+            <figcaption ><em>Sismograma de la estación SOMA del 11 y 12 de julio de 2015. CUEV-RESCO.</em></figcaption>
+          </div>
+
+          Adicionalmente, desde el 2016, el CUEV cuenta con sensores acústicos que nos permiten monitorear las señales de infrasonido que se pueden generar durante explosiones, derrumbes, lahares y desgasificaciones intensas. 
+          Las señales de infrasonido son señales acústicas por debajo de los 20 Hz, y son bastante útiles para caracterizar la actividad explosiva del volcán. Cuando ocurre una explosión, se genera una onda de choque, la cual es consecuencia de una perturbación en la atmósfera debido a la rápida salida del material volcánico. Gracias a este monitoreo, podemos conocer la energía acústica de las explosiones por ejemplo. De igual forma, es muy útil pues nos puede ayudar a discernir entre eventos explosivos y LPs.
+          <div class="imagess">
+            <img src="/src/img/acustigrama.png">
+            <figcaption><em>Acustigrama CUEV-RESCO.</em></figcaption>
+          </div>
+          <div class="imagess">
+            <img src="/src/img/estacion sismica de banda ancha.png">
+            <figcaption><em>Estación sísmica de banda ancha (<strong>USBO</strong>). CUEV-RESCO.</em></figcaption>
+          </div>
+          
+    </p>
+
+    <p id="geodesico">
+        <strong>Monitoreo Geodésico</strong>
+        <br>
+          El monitoreo geodésico es una técnica que permite medir los movimientos del terreno, ya sea por deformaciones o desplazamientos. En el caso de los volcanes, esta técnica es fundamental para detectar cambios en la forma del volcán que pueden indicar actividad magmática. Los instrumentos geodésicos, como los GPS y las estaciones de medición, registran con alta precisión las variaciones en la posición del terreno, lo que ayuda a identificar si el volcán está experimentando inflaciones o deflaciones.
+          La Red Geodésica del Estado de Colima (REGEOCOL) es la encargada de realizar el monitoreo geodésico del Volcán de Colima. Esta red utiliza tecnología avanzada para medir con precisión los movimientos del terreno y detectar cualquier cambio significativo en la actividad volcánica.
+          El monitoreo geodésico complementa otras técnicas de vigilancia volcánica, como el monitoreo sísmico y geoquímico, proporcionando una visión integral del comportamiento del volcán y ayudando a predecir posibles erupciones.
+          <div class="imagess">
+            <img src="/src/img/monitorei geodesico.gif">  
+            <figcaption><em>Monitoreo Geodésico, CUEV-Observatorio Vulcanológico</em></figcaption>
+          </div>  
+    </p>
+
+    <p id="geoquimico">
+        <strong>Monitoreo Geoquímico</strong>
+        <br>
+          La mayoría de las erupciones volcánicas vienen precedidas por cambios geofísicos y/o geoquímicos. Estos cambios pueden ser detectados y medidos con exactitud mediante técnicas de monitoreo, utilizando la instrumentación y tecnología adecuadas. El estudio por métodos químicos de la composición de los productos volcánicos, así como los efectos de la interacción de estos productos con el medio ambiente, constituyen una herramienta valiosa para obtener información referente a las distintas etapas de la actividad volcánica. 
+          Por medio de instrumentos remotos se puede conocer la cantidad de gases que expulsa un volcán, como dióxido de azufre y dióxido de carbono, por ejemplo. También se toman muestras de las cenizas expulsadas para ver su contenido mineralógico, así como muestras de aguas de los manantiales cercanos al volcán para ver elementos asociados al magma en ascenso.
+          <div class="imagess">
+            <img src="/src/img/monitoreo vulcanologico.jpg">
+            <figcaption><em>Monitoreo Geoquímico, CUEV-Observatorio Vulcanológico</em></figcaption>
+          </div>
+
+    </p>
+
+    <p id="visual">
+        <strong>Monitoreo Visual</strong>
+        <br>
+          Esta vigilancia es llevada a cabo a través de fotografía e imágenes de video a través de cámaras instaladas alrededor del volcán. Asimismo, se utilizan imágenes obtenidas con drones, cámaras térmicas, e imágenes de satélite. Con ellas es posible observar cambios en la actividad volcánica superficial y su uso es fundamental debido a que tienen una correlación con los otros parámetros de monitoreo. El monitoreo se realiza durante las 24 horas del día todo el año.
+          <div class="imagess">
+            <img src="/src/img/MONITOREO0.png">
+            <figcaption><em>Monitoreo Visual, CUEV-Observatorio Vulcanológico</em></figcaption>
+            </div>
+    </p>
+
+    <P id="satelital">
+        <strong>Monitoreo: Estaciones de Vigilancia.</strong>
+        <br>
+        Las estaciones de vigilancia volcánica, por regla general, son autónomas. En algunos casos, la necesidad de que estén en zonas poco accesibles, dificulta no sólo la comunicación, sino que imposibilita que tengan suministro de energía eléctrica convencional, quedando ésta reducida a algunas estaciones. Por ello, las estaciones constan de paneles solares que les proporcionan la energía suficiente para poder mantenerse de forma totalmente independiente durante años y conseguir la potencia necesaria para la extracción de los datos, su digitalización y su transmisión a los centros de información.
+        <div class="imagess">
+            <img src="/src/img/vigilancia.jpg">
+            <figcaption><em>Monitoreo Visual CUEV-Observatorio Vulcanológico</em></figcaption>
+        </div>
+
+
+        <div class="imagess">
+            <img src="/src/img/sismico monitoreo.jpg">
+            <figcaption><em>Monitoreo Visual CUEV-Observatorio Vulcanológico</em></figcaption>
+        </div>
+
+        Para que la interpretación de toda esta vigilancia o monitoreo sea efectiva, se deberá contar con un Observatorio Vulcanológico, que será el lugar donde se concentre la información que los científicos interpretarán, generando así un diagnóstico y un pronóstico de la actividad. 
+
+    </P>
+
     <p id="registro">
         <strong> Título de registro de La Casa del Volcán </strong>
         <br>
@@ -407,6 +638,9 @@
       La visión de convertir a la región de Colima en un Geoparque reconocido por la UNESCO ha dado impulso a proyectos de turismo sostenible como el volcanoturismo, el ecoturismo y el geoturismo en torno a esta riqueza natural.
     </p>
 
+    <div class="imagess">
+      <img src="/src/img/logo 2.png">
+    </div>
     <!-- Botón para volver arriba -->
     <button id="btn-volver-arriba" style="
       display: block;
