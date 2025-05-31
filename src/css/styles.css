@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 body {
-  margin: 0;
+  max-width: 100%;
+  margin: 0 auto;
   font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
   color: #333;
@@ -295,7 +296,7 @@ footer {
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 12px rgba(255, 52, 52, 0.25);
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -361,3 +362,117 @@ body.dark-mode .overlay {
   }
 }
 
+/* Seccion de letras en modo oscuro */
+/* Modo oscuro - Asegurar el color de los títulos en las secciones */
+body.dark-mode .section h2 {
+  color: #e0e0e0; /* blanco o gris claro */
+}
+
+body.dark-mode .highlight {
+  color: #ff5733; /* naranja para destacar */
+}
+
+body.dark-mode .highlight2 {
+  color: #ff0000; /* rojo para destacar */
+}
+
+
+/* NUEVO BLOQUE: SECCIÓN DE CONTACTO */
+
+#contacto .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centrado horizontal */
+  gap: 40px;
+  padding: 20px;
+}
+
+.contacto-info,
+.formulario-contacto {
+  flex: 1 1 400px; /* Crece pero mínimo 400px */
+  max-width: 500px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.formulario-contacto form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formulario-contacto label {
+  align-self: flex-start;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.formulario-contacto textarea {
+  height: 200px;
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+  border-color: #ff5733;
+  outline: none;
+}
+
+.cta-button {
+  background-color: #ff5733;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.cta-button:hover {
+  background-color: #e14c2a;
+}
+
+/* Modo oscuro (opcional) */
+body.dark-mode .contacto-info,
+body.dark-mode .formulario-contacto {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  box-shadow: 0 4px 8px rgba(2, 169, 38, 0.3);
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+body.dark-mode .cta-button {
+  background-color: #2e8b57;
+}
+
+body.dark-mode .cta-button:hover {
+  background-color: #1e5e3b;
+}
+
+@media (max-width: 768px) {
+  #contacto .content {
+    flex-direction: column;
+    align-items: center;
+  }
+}

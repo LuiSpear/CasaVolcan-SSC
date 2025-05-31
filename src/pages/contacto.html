@@ -45,28 +45,47 @@
     .nav-links a:hover {
       background-color: #e14c2a;
     }
-  .contenedor-flex {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 80px 20px 40px;
-    gap: 60px; /* antes era menos */
-    flex-wrap: wrap;
-  }
-
+    .contenedor-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      align-items: flex-start;
+      padding: 80px 20px 40px;
+    }
     .section {
       background-color: #fff;
       padding: 60px;
       border-radius: 25px;
       box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-      max-width: 560px;
+      max-width: 1200px;
       width: 100%;
+      box-sizing: border-box;
     }
     .section h2 {
       text-align: center;
       margin-bottom: 30px;
       color: #ff5733;
       font-size: 28px;
+    }
+    .formulario-visita,
+    .instrucciones-visita {
+      flex: 1 1 400px;
+      max-width: 500px;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+    }
+    .instrucciones-visita h3 {
+      color: #ff5733;
+    }
+    .instrucciones-visita ul {
+      padding-left: 20px;
+    }
+    .instrucciones-visita li {
+      margin-bottom: 10px;
     }
     form {
       display: flex;
@@ -87,14 +106,7 @@
       box-sizing: border-box;
       font-size: 16px;
     }
-
-    form textarea {
-      height: 368px;
-      width: 100%;
-      margin-bottom: 30px;
-    }
-
-    form input:focus, form textarea:focus {
+    form input:focus {
       border-color: #ff5733;
       outline: none;
     }
@@ -119,7 +131,9 @@
     body.dark-mode .navbar {
       background-color: #1e1e1e;
     }
-    body.dark-mode .section {
+    body.dark-mode .section,
+    body.dark-mode .formulario-visita,
+    body.dark-mode .instrucciones-visita {
       background-color: #1e1e1e;
       color: #e0e0e0;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
@@ -130,7 +144,7 @@
     body.dark-mode .cta-button:hover {
       background-color: #1e5e3b;
     }
-    body.dark-mode input, body.dark-mode textarea {
+    body.dark-mode input {
       background-color: #2a2a2a;
       color: #e0e0e0;
       border-color: #444;
@@ -150,7 +164,6 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
-
     footer {
       font-size: medium;
       text-align: center;
@@ -176,66 +189,65 @@
     </nav>
   </div>
 
-  <!-- Formulario de Visita -->
-  <div class="contenedor-flex">
-<section class="section">
-    <h2>Formulario de Visita</h2>
-    <form action="https://formsubmit.co/lacasadelvolcan@ucol.mx" method="POST">
-      <input type="hidden" name="_subject" id="hiddenSubject">
-      <input type="hidden" name="_captcha" value="false">
-      <label for="nombre">Nombre o Escuela:</label>
-      <input type="text" id="nombre" name="nombre" required />
-      <label for="fecha">Fecha de Visita:</label>
-      <input type="date" id="fecha" name="fecha" required />
-      <label for="hora">Hora de Visita:</label>
-      <input type="time" id="hora" name="hora" required />
-      <label for="personas">No. de Personas:</label>
-      <input type="number" id="personas" name="personas" min="1" required />
-      <label for="tel">Teléfono:</label>
-      <input type="text" id="tel" name="tel" required />
-      <label for="correo">Correo Electrónico:</label>
-      <input type="email" id="correo" name="correo" required />
-      <label for="asunto">Asunto:</label>
-      <input type="text" id="asunto" name="asunto" required />
-      <button type="submit" class="cta-button">Enviar Solicitud</button>
-    </form>
-  </section>
-
-  <!-- Formulario de Contacto Directo -->
+  <!-- Formulario de Visita con Instrucciones -->
   <section class="section">
-    <h2>Contáctanos</h2>
-    <form action="https://formsubmit.co/lacasadelvolcan@ucol.mx" method="POST">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_subject" id="contactSubject">
-      <label for="email">Tu Correo Electrónico:</label>
-      <input type="email" id="email" name="email" required />
-      <label for="asunto2">Asunto:</label>
-      <input type="text" id="asunto2" name="asunto2" required />
-      <label for="mensaje">Mensaje:</label>
-      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-      <button type="submit" class="cta-button">Enviar Correo</button>
-    </form>
+    <h2>Formulario de Visita</h2>
+    <div class="contenedor-flex">
+      <!-- Formulario -->
+      <div class="formulario-visita">
+        <form action="https://formsubmit.co/lacasadelvolcan@ucol.mx" method="POST">
+          <input type="hidden" name="_subject" id="hiddenSubject">
+          <input type="hidden" name="_captcha" value="false">
+          <label for="nombre">Nombre o Escuela:</label>
+          <input type="text" id="nombre" name="nombre" required />
+          <label for="fecha">Fecha de Visita:</label>
+          <input type="date" id="fecha" name="fecha" required />
+          <label for="hora">Hora de Visita:</label>
+          <input type="time" id="hora" name="hora" required />
+          <label for="personas">No. de Personas:</label>
+          <input type="number" id="personas" name="personas" min="1" required />
+          <label for="tel">Teléfono:</label>
+          <input type="text" id="tel" name="tel" required />
+          <label for="correo">Correo Electrónico:</label>
+          <input type="email" id="correo" name="correo" required />
+          <label for="asunto">Asunto:</label>
+          <input type="text" id="asunto" name="asunto" required />
+          <button type="submit" class="cta-button">Enviar Solicitud</button>
+        </form>
+      </div>
+
+      <!-- Instrucciones -->
+      <div class="instrucciones-visita">
+        <h3>¿Cómo llenar el formulario?</h3>
+        <p><strong>Este formulario te permite solicitar una visita a La Casa del Volcán.</strong> Por favor, completa todos los campos para que podamos confirmar y organizar tu visita adecuadamente.</p>
+        <ul>
+          <li><strong>Nombre o Escuela:</strong> Tu nombre completo o el de tu escuela/institución.</li>
+          <li><strong>Fecha de Visita:</strong> El día en que deseas visitarnos.</li>
+          <li><strong>Hora de Visita:</strong> Hora aproximada de llegada.</li>
+          <li><strong>No. de Personas:</strong> Número total de asistentes.</li>
+          <li><strong>Teléfono:</strong> Para contacto y confirmación.</li>
+          <li><strong>Correo Electrónico:</strong> Donde recibirás la confirmación.</li>
+          <li><strong>Asunto:</strong> Breve descripción de la visita (p. ej., "Visita escolar").</li>
+        </ul>
+        <p>Una vez enviado, nuestro equipo se pondrá en contacto contigo para confirmar la visita. ¡Gracias por tu interés!</p>
+      </div>
+    </div>
   </section>
-</div>
 
-<footer>
-        &copy; 2025 Centro de Estudios Vulcanológicos - Universidad de Colima. Todos los derechos reservados.
-</footer>
+  <footer>
+    &copy; 2025 Centro de Estudios Vulcanológicos - Universidad de Colima. Todos los derechos reservados.
+  </footer>
 
-<!-- Scripts -->
-<script>
-  document.querySelectorAll("form")[0].addEventListener("submit", function () {
-    const subjectValue = document.getElementById("asunto").value || "Nuevo mensaje de visitante";
-    document.getElementById("hiddenSubject").value = subjectValue;
-  });
-  document.querySelectorAll("form")[1].addEventListener("submit", function () {
-    const subject = document.getElementById("asunto2").value || "Mensaje desde contacto";
-    document.getElementById("contactSubject").value = subject;
-  });
-</script>
+  <!-- Scripts -->
+  <script>
+    document.querySelector("form").addEventListener("submit", function () {
+      const subjectValue = document.getElementById("asunto").value || "Nuevo mensaje de visitante";
+      document.getElementById("hiddenSubject").value = subjectValue;
+    });
+  </script>
 
-<button class="toggle-dark" onclick="document.body.classList.toggle('dark-mode')">
-  🌙 Modo Oscuro
-</button>
+  <button class="toggle-dark" onclick="document.body.classList.toggle('dark-mode')">
+    🌙 Modo Oscuro
+  </button>
 </body>
 </html>
