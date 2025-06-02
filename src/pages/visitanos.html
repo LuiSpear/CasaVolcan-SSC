@@ -51,7 +51,7 @@
       justify-content: center;
       gap: 40px;
       align-items: center;
-      padding: 40px 20px 40px;
+      padding: 50px 20px 40px;
     }
     .section {
       background-color: #fff;
@@ -69,49 +69,25 @@
       color: #ff5733;
       font-size: 28px;
     }
-    .formulario-contacto {
-  flex: 1 1 400px; /* Crece pero mínimo 400px */
-  max-width: 800px;
-  background-color: #fff;
-  padding: 50px;
-  border-radius: 15px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-}
-
-.formulario-contacto form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.formulario-contacto label {
-  align-self: flex-start;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.formulario-contacto input,
-.formulario-contacto textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-sizing: border-box;
-  font-size: 16px;
-}
-
-.formulario-contacto textarea {
-  height: 200px;
-}
-
-.formulario-contacto input:focus,
-.formulario-contacto textarea:focus {
-  border-color: #ff5733;
-  outline: none;
-}
-
+    .formulario-visita,
+    .instrucciones-visita {
+      flex: 1 1 400px;
+      max-width: 800px;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+    }
+    .instrucciones-visita h3 {
+      color: #ff5733;
+    }
+    .instrucciones-visita ul {
+      padding-left: 20px;
+    }
+    .instrucciones-visita li {
+      margin-bottom: 10px;
+    }
     form {
       display: flex;
       flex-direction: column;
@@ -234,26 +210,34 @@
     </nav>
   </div>
 
-  <!-- Formulario de Contacto  -->
+  <!-- Formulario de Visita con Instrucciones -->
   <section class="section">
-    <h2>Formulario de Contacto</h2>
+    <h2>Formulario de Visita</h2>
     <div class="contenedor-flex">
       <!-- Formulario -->
-      <div class="formulario-contacto">
-      <h3>Contáctanos</h3>
-      <form action="https://formsubmit.co/lacasadelvolcan@ucol.mx" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" id="contactSubject">
-        <label for="email">Tu Correo Electrónico:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="asunto2">Asunto:</label>
-        <input type="text" id="asunto2" name="asunto2" required>
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-        <button type="submit" class="cta-button">Enviar Correo</button>
-      </form>
-    </div>
+      <div class="formulario-visita">
+        <form action="https://formsubmit.co/lacasadelvolcan@ucol.mx" method="POST">
+          <input type="hidden" name="_subject" id="hiddenSubject">
+          <input type="hidden" name="_captcha" value="false">
+          <label for="nombre">Nombre o Escuela:</label>
+          <input type="text" id="nombre" name="nombre" required />
+          <label for="fecha">Fecha de Visita:</label>
+          <input type="date" id="fecha" name="fecha" required />
+          <label for="hora">Hora de Visita:</label>
+          <input type="time" id="hora" name="hora" required />
+          <label for="personas">No. de Personas:</label>
+          <input type="number" id="personas" name="personas" min="1" required />
+          <label for="tel">Teléfono:</label>
+          <input type="text" id="tel" name="tel" required />
+          <label for="correo">Correo Electrónico:</label>
+          <input type="email" id="correo" name="correo" required />
+          <label for="asunto">Asunto:</label>
+          <input type="text" id="asunto" name="asunto" required />
+          <button type="submit" class="cta-button">Enviar Solicitud</button>
+        </form>
+      </div>
 
+      <!-- Instrucciones -->
     </div>
   </section>
 
