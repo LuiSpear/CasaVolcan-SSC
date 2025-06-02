@@ -216,7 +216,9 @@
     .toggle-dark {
       position: fixed;
       bottom: 20px;
-      right: 20px;
+      left: 20px;
+      width: 200px;
+      display: inline-block;
       z-index: 2000;
       padding: 10px 15px;
       background-color: #006633;
@@ -413,10 +415,29 @@ body.dark-mode .submenu-items a:hover {
             </ul>
           </li>
 
-          <li><a href="#registro">Registro</a></li>
+
+          <li><a href="#registro">Descubre más</a></li>
         </ul>
       </aside>
-
+    <div>
+      <button id="btn-volver-arriba" style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: block;
+        padding: 12px 28px;
+        font-size: 1.1rem;
+        background-color: #ff5733;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        transition: background 0.2s;
+        ">
+        ↑ 
+      </button>
+    </div>
 
   <!-- Contenido  -->
     <div class="container">
@@ -630,15 +651,10 @@ body.dark-mode .submenu-items a:hover {
     </P>
 
     <p id="registro">
-        <strong> Título de registro de La Casa del Volcán </strong>
-        <br>
-        La Casa del Volcán® es un centro de información y educación sobre la actividad
-        volcánica, que busca promover la cultura científica y la conciencia sobre los
-        peligros volcánicos en la región. Su misión es ofrecer un espacio seguro y accesible
-        para el aprendizaje y la divulgación de conocimientos relacionados con el Volcán de
-        Fuego de Colima.
-        <br>
-      La Casa del Volcán® es una marca registrada, lo que garantiza la protección de su identidad y la calidad de los servicios que ofrece. Este registro es un paso importante para asegurar la continuidad de su misión educativa y de investigación.
+        <strong> Agenda tu visita para saber más </strong>
+
+        <a href="contacto.html"><u>Click aqui para agendar tu visita</u></a>.
+
     </p>
 
     <div class="images">
@@ -648,28 +664,14 @@ body.dark-mode .submenu-items a:hover {
     </div>
 
     <p id="proyectos">
-      La visión de convertir a la región de Colima en un Geoparque reconocido por la UNESCO ha dado impulso a proyectos de turismo sostenible como el volcanoturismo, el ecoturismo y el geoturismo en torno a esta riqueza natural.
+     La Casa del Volcán® es una marca registrada, lo que garantiza la protección de su identidad y la calidad de los servicios que ofrece. Este registro es un paso importante para asegurar la continuidad de su misión educativa y de investigación.
+
     </p>
 
     <div class="imagess">
       <img src="/src/img/logo 2.png">
     </div>
-    <!-- Botón para volver arriba -->
-    <button id="btn-volver-arriba" style="
-      display: block;
-      margin: 2rem auto 0 auto;
-      padding: 12px 28px;
-      font-size: 1.1rem;
-      background-color: #ff5733;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-      transition: background 0.2s;
-    ">
-      ↑ Volver arriba
-    </button>
+
   </div>
 </div>
     <!--  Fin del contenido  -->
