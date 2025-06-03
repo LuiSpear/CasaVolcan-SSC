@@ -132,7 +132,7 @@ a {
 .section h2 {
   text-align: center;
   font-size: 2em;
-  color: #000;
+  color: #ff5733;
 }
 
 .highlight {
@@ -426,60 +426,60 @@ body.dark-mode .highlight2 {
 }
 
 
-/* NUEVO BLOQUE: SECCIÓN DE CONTACTO */
-
+/* SECCIÓN DE CONTACTO */
 #contacto .content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centrado horizontal */
+  justify-content: center;
   gap: 40px;
   padding: 20px;
+  align-items: stretch;  /* fuerza que ambos tengan la misma altura */
 }
 
+/* CAJAS DE FORMULARIO (CONTACTO Y VISITA) */
 .contacto-info,
-.formulario-contacto {
-  flex: 1 1 400px; /* Crece pero mínimo 400px */
+.formulario-contacto,
+.formulario-visita,
+.instrucciones-visita {
+  flex: 1 1 400px;
+  width: 100%;
   max-width: 500px;
+  min-width: 300px;
   background-color: #fff;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
+  font-size: 16px;
+  display: flex;            /* 👈 Importante: usar flexbox para estirar */
+  flex-direction: column;
+  justify-content: space-between; /* 👈 Distribuye contenido de manera uniforme */
+  min-height: 550px;        /* 👈 Ajusta esta altura si es necesario */
 }
 
-.formulario-contacto form {
+/* FORMULARIOS DE CONTACTO Y VISITA */
+.formulario-contacto form,
+.formulario-visita form {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.formulario-contacto label {
-  align-self: flex-start;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.formulario-contacto input,
-.formulario-contacto textarea {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-sizing: border-box;
-  font-size: 16px;
+  flex-grow: 1;
 }
 
-.formulario-contacto textarea {
-  height: 200px;
+/* Listas e Instrucciones */
+.instrucciones-visita ul {
+  list-style-position: inside;
+  padding-left: 0;
+  margin: 0;
+  width: 100%;
 }
 
-.formulario-contacto input:focus,
-.formulario-contacto textarea:focus {
-  border-color: #ff5733;
-  outline: none;
+.instrucciones-visita li {
+  margin-bottom: 10px;
 }
 
+/* Botón CTA */
 .cta-button {
   background-color: #ff5733;
   color: white;
@@ -488,20 +488,21 @@ body.dark-mode .highlight2 {
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  width: 90%;
+  width: 100%;
   font-size: 18px;
+  transition: background-color 0.3s;
+  margin-top: auto;    /* 👈 Manda el botón al fondo del contenedor flex */
 }
 
 .cta-button:hover {
   background-color: #e14c2a;
 }
 
-
-
-
-/* Modo oscuro (opcional) */
+/* Modo oscuro */
 body.dark-mode .contacto-info,
-body.dark-mode .formulario-contacto {
+body.dark-mode .formulario-contacto,
+body.dark-mode .formulario-visita,
+body.dark-mode .instrucciones-visita {
   background-color: #1e1e1e;
   color: #e0e0e0;
   box-shadow: 0 4px 8px rgba(2, 169, 38, 0.3);
@@ -522,6 +523,7 @@ body.dark-mode .cta-button:hover {
   background-color: #1e5e3b;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   #contacto .content {
     flex-direction: column;
@@ -529,82 +531,22 @@ body.dark-mode .cta-button:hover {
   }
 }
 
-
-
-
-    .formulario-visita,
-    .instrucciones-visita {
-      flex: 1 1 400px;
-      max-width: 500px;
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-      box-sizing: border-box ;
-      font-size: small;
-    }
-    .instrucciones-visita h2 {
-      color: #ff5733;
-    }
-    .instrucciones-visita ul {
-      padding-left: 20px;
-    }
-    .instrucciones-visita li {
-      margin-bottom: 1%;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    form label {
-      align-self: flex-start;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-    form input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      box-sizing: border-box;
-      font-size: 16px;
-    }
-    form input:focus {
-      border-color: #ff5733;
-      outline: none;
-    }
-    .cta-button {
-      background-color: #ff5733;
-      color: white;
-      padding: 20px 20px;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      width: 100%;
-      font-size: 20px;
-    }
-    .cta-button:hover {
-      background-color: #e14c2a;
-    }
-
 /* boton de la X */
 
 
  .close-button {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      background: #8b0000;
-      color: white;
-      border: none;
-      padding: 5px 10px;
-      font-size: 20px;
-      cursor: pointer;
-      border-radius: 5px;
-      z-index: 2;
+    position: absolute;
+    top: 25px;
+    right: 27%;
+    background: #8b0000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 16.5%;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 2;
     }
 
     .show-button {
