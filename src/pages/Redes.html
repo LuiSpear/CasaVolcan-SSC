@@ -67,45 +67,53 @@
       max-width: 1200px;
     }
 
-    .section h2 {
+    .section h2, .section h1 {
       text-align: center;
-      font-size: 2.5em;
-      color: #000;
+      font-size: 3em;
+      color: #ff5733;
       margin-bottom: 20px;
     }
 
     .highlight {
       color: #ff5733;
+      text-align: center;
     }
 
     .redes-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 30px;
+      gap: 40px;
       justify-content: center;
       align-items: stretch;
-      margin-top: 30px;
+      margin-top: 40px;
     }
 
     .card {
       background-color: #fff;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-      padding: 20px;
-      flex: 1 1 320px;
-      max-width: 400px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+      flex: 1 1 400px;
+      max-width: 500px;
+      min-height: 500px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     }
 
     .card h3 {
       text-align: center;
       color: #ff5733;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+    }
+
+    .fb-page {
+      width: 100% !important;
+      height: 400px !important;
     }
 
     .social-button {
@@ -124,8 +132,8 @@
     }
 
     .social-button img {
-      width: 24px;
-      height: 24px;
+      width: 30px;
+      height: 30px;
     }
 
     .footer-links {
@@ -174,24 +182,24 @@
     }
 
     /* Botón para activar modo oscuro */
-        .toggle-dark {
-        position: fixed;
-        bottom: 30px;
-        left: 20px;
-        width: 200px;
-        display: inline-block;
-        z-index: 2000;
-        padding: 12px 15px;
-        font-size: 15px;
-        font-weight: bold;
-        background-color: #006633;
-        color: white;
-        border: none;
-        border-radius: 12px;
-        cursor: pointer;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-        transition: background-color 0.3s ease, transform 0.2s ease;
-      } 
+    .toggle-dark {
+      position: fixed;
+      bottom: 30px;
+      left: 20px;
+      width: 200px;
+      display: inline-block;
+      z-index: 2000;
+      padding: 12px 15px;
+      font-size: 15px;
+      font-weight: bold;
+      background-color: #006633;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
 
     /* Estilos modo oscuro */
     body.dark-mode {
@@ -247,7 +255,8 @@
 
   <!-- CONTENIDO -->
   <section class="section" id="redes">
-    <h2 class="highlight">Nuestras Redes Sociales</h2>
+    <h1 class="highlight">Nuestras Redes Sociales</h1>
+    <h1 class="highlight">¡Síguenos!</h1>
 
     <div class="redes-grid">
 
@@ -257,24 +266,24 @@
         <div class="fb-page"
           data-href="https://www.facebook.com/profile.php?id=61553588607820"
           data-tabs="timeline"
-          data-width="360"
+          data-width="400"
           data-small-header="false"
           data-adapt-container-width="true"
           data-hide-cover="false"
           data-show-facepile="true">
           <blockquote cite="https://www.facebook.com/profile.php?id=61553588607820" class="fb-xfbml-parse-ignore">
-            <a href="https://www.facebook.com/profile.php?id=100068967222205" target="_blank">Facebook CUEV</a>
+            <a href="https://www.facebook.com/profile.php?id=61553588607820" target="_blank">Facebook CUEV</a>
           </blockquote>
         </div>
       </div>
 
       <!-- Instagram Card -->
-      <div class="card">
+      <div class="card slide-in">
         <h3><i class="fab fa-instagram"></i> Instagram</h3>
         <blockquote class="instagram-media"
           data-instgrm-permalink="https://www.instagram.com/p/DAtzf5PpVOg/"
           data-instgrm-version="14"
-          style="background:#FFF; border:0; margin: 1px auto; max-width: 540px; width: 100%; padding: 0;">
+          style="background:#FFF; border:0; margin: 0 auto; max-width: 100%; width: 100%; min-height: 400px;">
         </blockquote>
         <script async src="//www.instagram.com/embed.js"></script>
       </div>
@@ -290,9 +299,9 @@
     </div>
   </section>
 
-    <footer>
-        &copy; 2025 Centro de Estudios Vulcanológicos - Universidad de Colima. Todos los derechos reservados.
-    </footer>
+  <footer>
+    &copy; 2025 Centro de Estudios Vulcanológicos - Universidad de Colima. Todos los derechos reservados.
+  </footer>
 
   <!-- Animación al hacer scroll -->
   <script>
