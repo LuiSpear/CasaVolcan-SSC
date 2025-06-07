@@ -12,228 +12,263 @@
     src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v18.0"
     nonce="abc123"></script>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #f3f3f3;
-      color: #333;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f3f3f3;
+  color: #333;
+}
 
-    .navbar {
-      background-color: #ff5733;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-    }
+.navbar {
+  background-color: #ff5733;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
 
-    .logo {
-      height: 70px;
-    }
+.logo {
+  height: 70px;
+}
 
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 15px;
-      margin: 0;
-      padding: 0;
-    }
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
 
-    .nav-links li {
-      display: inline;
-    }
+.nav-links li {
+  display: inline;
+}
 
-    .nav-links a {
-      color: white;
-      font-weight: bold;
-      padding: 5px 10px;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      font-size: 20px;
-    }
+.nav-links a {
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-size: 20px;
+}
 
-    .nav-links a:hover {
-      background-color: #e14c2a;
-    }
+.nav-links a:hover {
+  background-color: #e14c2a;
+}
 
-    .section {
-      padding: 40px 20px;
-      background-color: white;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-      margin: 40px auto;
-      border-radius: 20px;
-      max-width: 1200px;
-    }
+.section {
+  padding: 20px 20px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  border-radius: 20px;
+  max-width: 1200px;
+}
 
-    .section h2, .section h1 {
-      text-align: center;
-      font-size: 3em;
-      color: #ff5733;
-      margin-bottom: 20px;
-    }
+.section h1 {
+  text-align: center;
+  font-size: 3em;
+  color: #ff5733;
+  margin-bottom: 20px;
+}
 
-    .highlight {
-      color: #ff5733;
-      text-align: center;
-    }
+.highlight {
+  color: #ff5733;
+  text-align: center;
+}
 
-    .redes-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      justify-content: center;
-      align-items: stretch;
-      margin-top: 40px;
-    }
+.redes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 0px;
+}
 
-    .card {
-      background-color: #fff;
-      border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      padding: 30px;
-      flex: 1 1 400px;
-      max-width: 500px;
-      min-height: 500px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+.card {
+  background: linear-gradient(135deg, #ffffff, #ffe6e6);
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  flex: 1 1 400px;
+  max-width: 450px;
+  min-height: 500px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    }
+.card:hover {
+  transform: translateY(-5px) rotate(-1deg);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
 
-    .card h3 {
-      text-align: center;
-      color: #ff5733;
-      margin-bottom: 20px;
-      font-size: 1.8em;
-    }
+/* Cabecera de la tarjeta */
+.card h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
 
-    .fb-page {
-      width: 100% !important;
-      height: 400px !important;
-    }
+/* Colores por red social */
+.card h3 i.fa-facebook {
+  color: #1877f2;
+}
 
-    .social-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 15px;
-      font-weight: bold;
-      text-decoration: none;
-      color: #333;
-      justify-content: center;
-    }
+.card h3 i.fa-instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-    .social-button:hover {
-      color: #ff5733;
-    }
 
-    .social-button img {
-      width: 30px;
-      height: 30px;
-    }
+.fb-page {
+  width: 100% !important;
+  height: 400px !important;
+}
 
-    .footer-links {
-      text-align: center;
-      margin-top: 50px;
-    }
+/* Botón CTA */
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ff5733;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
 
-    .footer-links ul {
-      list-style: none;
-      padding: 0;
-    }
+.social-button i {
+  font-size: 20px;
+}
 
-    .footer-links li {
-      margin-bottom: 10px;
-    }
+.social-button:hover {
+  background-color: #e14c2a;
+  transform: translateY(-3px);
+}
 
-    .footer-links a {
-      color: #ff5733;
-      text-decoration: none;
-      font-weight: bold;
-    }
+/* Footer Links */
+.footer-links {
+  text-align: center;
+  margin-top: 50px;
+}
 
-    .footer-links a:hover {
-      text-decoration: underline;
-    }
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
 
-    footer {
-      font-size: medium;
-      text-align: center;
-      background-color: #ff5733;
-      color: white;
-      padding: 1rem;
-      margin-top: 2rem;
-      font-size: 16px;
-    }
+.footer-links li {
+  margin-bottom: 10px;
+}
 
-    .slide-in {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
+.footer-links a {
+  color: #ff5733;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    .slide-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.footer-links a:hover {
+  text-decoration: underline;
+}
 
-    /* Botón para activar modo oscuro */
-    .toggle-dark {
-      position: fixed;
-      bottom: 30px;
-      left: 20px;
-      width: 200px;
-      display: inline-block;
-      z-index: 2000;
-      padding: 12px 15px;
-      font-size: 15px;
-      font-weight: bold;
-      background-color: #006633;
-      color: white;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
+footer {
+  text-align: center;
+  background-color: #ff5733;
+  color: white;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 16px;
+}
 
-    /* Estilos modo oscuro */
-    body.dark-mode {
-      background-color: #121212;
-      color: #e0e0e0;
-    }
+/* Animación de aparición */
+.slide-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 
-    body.dark-mode .section {
-      background-color: #1e1e1e;
-      color: #e0e0e0;
-    }
+.slide-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    body.dark-mode .navbar {
-      background-color: #1e1e1e;
-    }
+/* Botón de modo oscuro */
+.toggle-dark {
+  position: fixed;
+  bottom: 30px;
+  left: 20px;
+  width: 200px;
+  display: inline-block;
+  z-index: 2000;
+  padding: 12px 15px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #006633;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
-    body.dark-mode .card {
-      background-color: #2b2b2b;
-      color: #eee;
-      box-shadow: 0 8px 16px rgba(255, 255, 255, 0.05);
-    }
+/* Modo oscuro */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
 
-    body.dark-mode .card h3 {
-      color: #90ee90;
-    }
+body.dark-mode .section {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
 
-    body.dark-mode .highlight {
-      color: #90ee90;
-    }
+body.dark-mode .navbar {
+  background-color: #1e1e1e;
+}
 
-    body.dark-mode .footer-links a {
-      color: #90ee90;
-    }
-  </style>
+body.dark-mode .card {
+  background-color: #2b2b2b;
+  color: #eee;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .card h3 i.fa-facebook {
+  color: #90ee90;
+}
+
+body.dark-mode .card h3 i.fa-instagram {
+  background: linear-gradient(to right, #fdf497, #fd5949, #d6249f, #285aeb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.dark-mode .social-button {
+  background-color: #2e8b57;
+  color: white;
+}
+
+body.dark-mode .social-button:hover {
+  background-color: #1e5e3b;
+}
+
+body.dark-mode .footer-links a {
+  color: #90ee90;
+}
+</style>
 </head>
 <body>
 
@@ -275,6 +310,10 @@
             <a href="https://www.facebook.com/profile.php?id=61553588607820" target="_blank">Facebook CUEV</a>
           </blockquote>
         </div>
+        <a href="https://www.facebook.com/profile.php?id=61553588607820" target="_blank" class="social-button">
+          <i class="fab fa-facebook"></i> ¡Dale Like!
+        </a>
+
       </div>
 
       <!-- Instagram Card -->
@@ -286,6 +325,10 @@
           style="background:#FFF; border:0; margin: 0 auto; max-width: 100%; width: 100%; min-height: 400px;">
         </blockquote>
         <script async src="//www.instagram.com/embed.js"></script>
+
+        <a href="https://www.instagram.com/p/DAtzf5PpVOg/" target="_blank" class="social-button">
+          <i class="fab fa-instagram"></i> ¡Dale Like!
+        </a>
       </div>
     </div>
 

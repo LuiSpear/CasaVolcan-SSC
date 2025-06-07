@@ -74,6 +74,11 @@ a {
   object-fit: cover;
   transform: translate(-50%, -50%);
   z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+.hero:hover #heroVideo {
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 .hero-text {
@@ -111,8 +116,15 @@ a {
   font-weight: bold;
   border-radius: 5px;
   font-size: 1.2em;
-  transition: background-color 0.3s;
-  max-width: 300px;  /* Ajusta este valor según tu necesidad */
+  transition: background-color 0.3s, transform 0.3s;
+  max-width: 300px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 .cta-button:hover {
@@ -127,6 +139,18 @@ a {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 20px;
   border-radius: 10px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.slide-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .section h2 {
@@ -155,6 +179,12 @@ a {
   width: 40%;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .content p {
@@ -163,24 +193,52 @@ a {
   font-size: 1.3em;
 }
 
-    /* NUEVO BLOQUE: SECCIÓN DE CONTACTO */
+/* FAQ Acordeón */
+.accordion {
+  background-color: #ff5733;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
 
+.accordion:hover {
+  background-color: #e14c2a;
+}
+
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background-color: #fff;
+  padding: 0 15px;
+  border-radius: 8px;
+}
+
+/* SECCIÓN DE CONTACTO */
 #contacto .content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centrado horizontal */
+  justify-content: center;
   gap: 40px;
   padding: 20px;
+  align-items: stretch;
 }
 
-.formulario-contacto, h2{
+.formulario-contacto, h2 {
   color: #ff5733;
 }
 
 .contacto-info,
 .formulario-contacto {
-    text-align: center;
-  flex: 1 1 400px; /* Crece pero mínimo 400px */
+  text-align: center;
+  flex: 1 1 400px;
   max-width: 500px;
   background-color: #fff;
   padding: 30px;
@@ -188,29 +246,17 @@ a {
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   font-size: small;
-    align-items: center;
-
+  align-items: center;
 }
+
 .contacto-info h2 {
   color: #ff5733;
-
 }
 
 .formulario-contacto form {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.formulario-contacto ul {
-  padding-left: 20px;
-  margin-bottom: 1%;
-}
-
-
-.formulario-contacto label {
-  align-self: flex-start;
-  margin-bottom: 5px;
-  font-weight: bold;;
 }
 
 .formulario-contacto input,
@@ -232,22 +278,6 @@ a {
 .formulario-contacto textarea:focus {
   border-color: #ff5733;
   outline: none;
-}
-
-.cta-button {
-  background-color: #ff5733;
-  color: white;
-  padding: 15px 20px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  width: 90%;
-  font-size: 18px;
-}
-
-.cta-button:hover {
-  background-color: #e14c2a;
 }
 
 /* FOOTER */
@@ -284,7 +314,6 @@ footer {
 }
 
 /* ESTADÍSTICAS DE REDES */
-
 .social-stats {
   display: flex;
   flex-wrap: wrap;
@@ -313,27 +342,7 @@ footer {
   opacity: 0.9;
 }
 
-/* ANIMACIÓN AL HACER SCROLL */
-
-#inicio,
-#historia,
-#ubicacion,
-#contacto {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-#inicio.slide-in,
-#historia.slide-in,
-#ubicacion.slide-in,
-#contacto.slide-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* BOTÓN MODO OSCURO */
-
 .toggle-dark {
   position: fixed;
   bottom: 30px;
@@ -359,7 +368,6 @@ footer {
 }
 
 /* MODO OSCURO */
-
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
@@ -395,8 +403,7 @@ body.dark-mode .overlay {
   background: rgba(0, 0, 0, 0.7);
 }
 
-/* RESPONSIVE */
-
+/* Responsive */
 @media (max-width: 768px) {
   .content {
     flex-direction: column;
@@ -413,158 +420,40 @@ body.dark-mode .overlay {
     font-size: 1em;
     padding: 10px 15px;
   }
-}
 
-/* Seccion de letras en modo oscuro */
-/* Modo oscuro - Asegurar el color de los títulos en las secciones */
-body.dark-mode .section h2 {
-  color: #e0e0e0; /* blanco o gris claro */
-}
-
-body.dark-mode .highlight {
-  color: #ff5733; /* naranja para destacar */
-}
-
-body.dark-mode .highlight2 {
-  color: #ff0000; /* rojo para destacar */
-}
-
-
-/* SECCIÓN DE CONTACTO */
-#contacto .content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  padding: 20px;
-  align-items: stretch;  /* fuerza que ambos tengan la misma altura */
-}
-
-/* CAJAS DE FORMULARIO (CONTACTO Y VISITA) */
-.contacto-info,
-.formulario-contacto,
-.formulario-visita,
-.instrucciones-visita {
-  flex: 1 1 400px;
-  width: 100%;
-      align-items: center;
-  max-width: 500px;
-  min-width: 300px;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-  font-size: 16px;
-  display: flex;            /* 👈 Importante: usar flexbox para estirar */
-  flex-direction: column;
-  justify-content: space-between; /* 👈 Distribuye contenido de manera uniforme */
-  min-height: 550px;        /* 👈 Ajusta esta altura si es necesario */
-}
-
-/* FORMULARIOS DE CONTACTO Y VISITA */
-.formulario-contacto form,
-.formulario-visita form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  flex-grow: 1;
-}
-
-/* Listas e Instrucciones */
-.instrucciones-visita ul {
-  list-style-position: inside;
-  padding-left: 0;
-  margin: 0;
-  width: 100%;
-}
-
-.instrucciones-visita li {
-  margin-bottom: 10px;
-}
-
-/* Botón CTA */
-.cta-button {
-  background-color: #ff5733;
-  color: white;
-  padding: 15px 20px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-  transition: background-color 0.3s;
-  margin-top: auto;    /* 👈 Manda el botón al fondo del contenedor flex */
-}
-
-.cta-button:hover {
-  background-color: #e14c2a;
-}
-
-/* Modo oscuro */
-body.dark-mode .contacto-info,
-body.dark-mode .formulario-contacto,
-body.dark-mode .formulario-visita,
-body.dark-mode .instrucciones-visita {
-  background-color: #1e1e1e;
-  color: #e0e0e0;
-  box-shadow: 0 4px 8px rgba(2, 169, 38, 0.3);
-}
-
-body.dark-mode input,
-body.dark-mode textarea {
-  background-color: #2a2a2a;
-  color: #e0e0e0;
-  border-color: #444;
-}
-
-body.dark-mode .cta-button {
-  background-color: #2e8b57;
-}
-
-body.dark-mode .cta-button:hover {
-  background-color: #1e5e3b;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
   #contacto .content {
     flex-direction: column;
     align-items: center;
   }
 }
 
-/* boton de la X */
+/* Botón de la X */
+.close-button {
+  position: absolute;
+  top: 16px;
+  right: 20%;
+  background: #8b0000;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 16.5%;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 2;
+}
 
-
- .close-button {
-    position: absolute;
-    top: 25px;
-    right: 27%;
-    background: #8b0000;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    margin-top: 16.5%;
-    font-size: 12px;
-    cursor: pointer;
-    border-radius: 5px;
-    z-index: 2;
-    }
-
-    .show-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #0b610b;
-      color: white;
-      border: none;
-      padding: 15px 15px;
-      font-size: 17px;
-      cursor: pointer;
-      border-radius: 5px;
-      z-index: 2;
-      display: none;
-    }
+.show-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #0b610b;
+  color: white;
+  border: none;
+  padding: 15px 15px;
+  font-size: 17px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 2;
+  display: none;
+}

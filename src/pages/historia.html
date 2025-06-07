@@ -229,43 +229,80 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.796);
     }
 
-    .banner-bienvenida {
-      position: relative;
-      width: 100%;
-      max-height: 400px;
-      overflow: hidden;
-      margin-bottom: 3rem;
-    }
+.banner-bienvenida {
+  position: relative;
+  top: 0;
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  animation: fadeInSlide 1s ease-out;
+  z-index: 10;
+}
 
-    .banner-bienvenida img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
-      max-height: 400px;
-    }
+@keyframes fadeInSlide {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
 
-    .banner-texto {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 2rem;
-      text-align: center;
-      border-radius: 12px;
-    }
+.banner-bienvenida img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 400px;
+  filter: brightness(75%);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
 
-    .banner-texto h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
+.banner-bienvenida:hover img {
+  transform: scale(1.05);
+  filter: brightness(85%);
+}
 
-    .banner-texto p {
-      font-size: 1.2rem;
-      margin: 0;
-    }
+.banner-texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7));
+  padding: 2rem;
+  text-align: center;
+  border-radius: 12px;
+  max-width: 80%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background 0.5s ease, transform 0.3s ease;
+}
+
+.banner-bienvenida:hover .banner-texto {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+  transform: translate(-50%, -52%);
+}
+
+.banner-texto h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+.banner-texto p {
+  font-size: 1.2rem;
+  margin: 0 0 1rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+/* Botón de acción dentro del banner */
+
+/* Modo oscuro */
+body.dark-mode .banner-bienvenida img {
+  filter: brightness(60%);
+}
+
+body.dark-mode .banner-texto {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+}
 
     /* Modo oscuro */
     body.dark-mode {
@@ -307,7 +344,8 @@
     }
 
     /* monitoreos desplegables */
-    .submenu {
+/* Submenú desplegable */
+.submenu {
   position: relative;
 }
 
@@ -323,26 +361,28 @@
   z-index: 999;
   list-style: none;
   min-width: 220px;
+  transition: all 0.3s ease;
 }
 
 .submenu:hover .submenu-items {
   display: block;
 }
 
-.submenu-items li {
-  margin: 0.3rem 0;
-}
-
+/* Efecto hover en links del submenu */
 .submenu-items a {
   color: #333;
   text-decoration: none;
   font-weight: normal;
   display: block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
 .submenu-items a:hover {
+  background-color: #e8f5f2;
   color: #ff5733;
-  padding-left: 5px;
+  padding-left: 15px;
 }
 
 /* Modo oscuro para submenu */
@@ -355,7 +395,45 @@ body.dark-mode .submenu-items a {
 }
 
 body.dark-mode .submenu-items a:hover {
+  background-color: #333;
   color: #ff5733;
+}
+
+/* Botón Volver Arriba Pulso */
+/* Botón "volver arriba" pulsante */
+#btn-volver-arriba {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Sidebar dinámico */
+.sidebar {
+  position: sticky;
+  top: 80px;
+  border-left: 4px solid #006633;
+  background-color: #dff6f0;
+  transition: border-left 0.3s ease;
+}
+
+.sidebar:hover {
+  border-left: 4px solid #ff5733;
+}
+
+.sidebar a:hover {
+  background-color: #e8f5f2;
+  border-radius: 5px;
+  padding-left: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Modo oscuro para sidebar */
+body.dark-mode .sidebar:hover {
+  background-color: #333;
 }
 
 
@@ -654,7 +732,7 @@ body.dark-mode .submenu-items a:hover {
     <p id="registro">
         <strong> Agenda tu visita para saber más </strong>
 
-        <a href="contacto.html"class="cta-button">Llena este formulario</a>.
+        <a href="contacto.html"class="cta-button">Llena este formulario</a>
 
     </p>
 
