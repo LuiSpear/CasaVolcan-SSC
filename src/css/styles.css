@@ -239,14 +239,18 @@ a {
 .contacto-info,
 .formulario-contacto {
   text-align: center;
-  flex: 1 1 400px;
-  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  max-width: 100%;
+  margin: 0 auto;
   background-color: #fff;
   padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  box-shadow: 0px 8px 70px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  font-size: small;
+  font-size: medium;
   align-items: center;
 }
 
