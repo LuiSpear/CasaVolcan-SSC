@@ -207,13 +207,36 @@
   margin-bottom: 10px;
 }
 
-    footer {
-      font-size: medium;
-      text-align: center;
-      padding: 20px;
-      background-color: #ff5733;
-      color: white;
-    }
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #ff5733;
+  color: white;
+}
+
+.footer-content p {
+  margin: 5px 0;
+  font-size: 19px;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px 0;
+}
+
+.social-links a {
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+  font-size: 19px;
+}
+
+.social-links a:hover {
+  color: #ffd6cc;
+}
   </style>
 </head>
 <body>
@@ -278,8 +301,25 @@
     </div>
   </section>
 
-  <footer>
-    &copy; 2025 Centro de Estudios Vulcanológicos - Universidad de Colima. Todos los derechos reservados.
+<footer>
+    <div class="footer-content">
+      <p>© 2025 Universidad de Colima. Todos los derechos reservados.</p>
+      <p>Contacto: <a href="mailto:info@ucol.mx">lacasadelvolcan@ucol.mx</a></p>
+      <ul class="social-links">
+        <li><a href="https://www.facebook.com/udecoficial" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"> Facebook UdeC
+        </a></li>
+        <li><a href="https://twitter.com/udec_oficial" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" alt="Twitter" width="24"> X UdeC
+        </a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=100068967222205" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"> Facebook CUEV
+        </a></li>
+        <li><a href="https://portal.ucol.mx/cueiv/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/24/1828/1828490.png" alt="Web"> Portal CUEIV
+        </a></li>
+      </ul>
+    </div>
   </footer>
 
   <!-- Scripts -->
