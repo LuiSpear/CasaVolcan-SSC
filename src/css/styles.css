@@ -171,7 +171,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  gap: 20px;
+  gap: 0px;
   justify-content: space-between;
 }
 
@@ -223,27 +223,34 @@ a {
 }
 
 /* SECCIÓN DE CONTACTO */
-#contacto .content {
+#contacto .contenedor-flex {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  padding: 20px;
+  justify-content:center;
+  gap: 0%;
+  padding: 0px;
   align-items: stretch;
 }
 
-.formulario-contacto, h2 {
+/* Título general de la sección y títulos de cajas */
+.formulario-contacto h2,
+.contacto-info h2,
+.visitarnos-info h2,
+h2 {
   color: #ff5733;
 }
 
+
+/* Caja de contacto y caja de visitarnos */
 .contacto-info,
-.formulario-contacto {
-  text-align: center;
+.visitarnos-info {
+  text-align: justify;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50%;
-  max-width: 100%;
+  flex: 1 1 45%;      /* Permite que estén uno al lado del otro en pantallas grandes */
+  min-width: 300px;   /* Ajuste mínimo para pantallas pequeñas */
+  max-width: 500px;
   margin: 0 auto;
   background-color: #fff;
   padding: 30px;
@@ -254,16 +261,14 @@ a {
   align-items: center;
 }
 
-.contacto-info h2 {
-  color: #ff5733;
-}
-
+/* Formulario de contacto */
 .formulario-contacto form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Campos de formulario */
 .formulario-contacto input,
 .formulario-contacto textarea {
   width: 100%;
@@ -275,16 +280,17 @@ a {
   font-size: 16px;
 }
 
+/* Altura de textarea */
 .formulario-contacto textarea {
   height: 200px;
 }
 
+/* Enfoque de campos */
 .formulario-contacto input:focus,
 .formulario-contacto textarea:focus {
   border-color: #ff5733;
   outline: none;
 }
-
 /* FOOTER */
 
 footer {
@@ -446,8 +452,8 @@ body.dark-mode .overlay {
 /* Botón de la X */
 .close-button {
   position: absolute;
-  top: 16px;
-  right: 20%;
+  top: -9%;
+  right: 23%;
   background: #8b0000;
   color: white;
   border: none;

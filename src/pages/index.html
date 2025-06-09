@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Casa del Volcán - Universidad de Colima</title>
   <link rel="stylesheet" href="/src/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="icon" type="image/png" href="/src/img/icono.png">
 </head>
 
@@ -25,8 +26,7 @@
           <li><a href="/src/pages/faq.html">FAQ</a></li>
           <li><a href="/src/pages/fotos.html">Galería</a></li>
           <li><a href="/src/pages/redes.html">Redes Sociales</a></li>
-          <li><a href="/src/pages/contacto.html">Contáctanos</a></li>
-          <li><a href="/src/pages/visitanos.html">Visítanos</a></li>
+          <li><a href="#contacto">Contáctanos</a></li>
         </ul>
       </nav>
     </div>
@@ -43,16 +43,16 @@
           <p>Explora, aprende y déjate maravillar por la ciencia y la naturaleza en la Casa del Volcán. 🌋✨</p>
           <div class="social-stats">
             <div class="stat">
-              <span class="number">+15,000</span>
+              <span class="number">+1,500</span>
               <span class="label">Exploradores Curiosos</span>
             </div>
             <div class="stat">
-              <span class="number">+6,500</span>
+              <span class="number">+1,000</span>
               <span class="label">Fans del Volcán</span>
             </div>
           </div>
           <br>
-          <a href="/src/pages/visitanos.html" class="cta-button">¡Planea tu aventura!</a>
+          <a href="/src/pages/visitanos.html" class="cta-button"><i class="fas fa-calendar-alt"></i>¡Planea tu aventura!</a>
         </div>
       </div>
       <button id="showHeroText" class="show-button">Mostrar</button>
@@ -70,7 +70,7 @@
           <br>
           <br>
           Sumérgete en un recorrido lleno de historia, ciencia y aventura. Observa en tiempo real cómo late el corazón de uno de los volcanes más activos de México, adéntrate con información enriquecedora y descubre su historia fascinante.
-          <a href="/src/pages/visitanos.html" class="highlight2" style="margin-left: 10px; cursor: pointer; text-decoration: underline;">
+          <a href="/src/pages/visitanos.html" class="highlight2" style="margin-left: 10px; cursor: pointer; text-decoration: underline;"><i class="fas fa-calendar-alt"></i>
             ¡Agenda tu visita!
           </a>
         </p>
@@ -84,7 +84,7 @@
         <p>
           La Casa del Volcán es el epicentro del turismo científico en la región. Nació como un proyecto para que jóvenes como tú descubran la energía y el poder de la tierra. Aprende de los expertos y sé parte de la ciencia en acción. 
           <a href="/src/pages/historia.html" class="highlight2" style="margin-left: 10px; cursor: pointer; text-decoration: underline;">
-            Conoce más
+            <br><i class="fas fa-book-open"></i> Conoce más
           </a>
         </p>
         <img src="/src/img/casavolcan.jpg" alt="La Casa del Volcán" class="image">
@@ -112,27 +112,38 @@
   </div>
 </section>
 
+<!-- Sección: Contacto y Visitarnos -->
+<section class="section" id="contacto">
+  <h2>¡Hablemos!</h2>
+  <div class="contenedor-flex">
+    <!-- Contacto -->
+    <div class="contacto-info">
+      <p><strong>Tienes preguntas, curiosidades o quieres saber más?</strong></p>
+      <br>¡Contáctanos! Estamos aquí para ayudarte a planear la mejor experiencia científica en la Casa del Volcán.
+      <ul class="contacto-lista">
+        <li><i class="fas fa-envelope"></i> <a href="mailto:lacasadelvolcan@ucol.mx">lacasadelvolcan@ucol.mx</a></li>
+        <li><i class="fas fa-phone"></i> <a href="tel:3123161134">312 316 1134</a></li>
+        <li><i class="fas fa-clock"></i> Jueves a Sábado: 9:00 am - 10:00 pm</li>
+      </ul>
+      <a href="/src/pages/contacto.html" class="cta-button">
+        <i class="fas fa-envelope"></i> Envíanos un mensaje
+      </a>
+    </div>
 
-    <!-- Sección: Contacto -->
-    <section class="section" id="contacto">
-      <h2>¡Hablemos!</h2>
-      <div class="content">
-        <div class="contacto-info">
-          <p><strong>¿Tienes preguntas, curiosidades o quieres saber más?</strong></p>
-          <p>¡Contáctanos! Estamos aquí para ayudarte a planear la mejor experiencia científica en la Casa del Volcán. </p>
-          <ul>
-            <strong>Correo:</strong> <a href="mailto:lacasadelvolcan@ucol.mx">lacasadelvolcan@ucol.mx</a>
-            <br>
-            <strong>Teléfono:</strong> <a href="tel:3123161134">312 316 1134</a>
-            <br>
-            <strong>Horario:</strong> Jueves a Sábado: 9:00 am - 10:00 pm.
-          </ul>
-          <button class="cta-button" onclick="window.location.href='/src/pages/contacto.html'">¡Envíanos un mensaje!</button>
-        </div>
-      </div>
-    </section>
-  </main>
-
+    <!-- Visitarnos -->
+    <div class="visitarnos-info">
+      <p><strong>¡Agenda tu experiencia científica!</strong></p>
+      <p>Llena nuestro formulario de visita y vive la aventura de explorar el impresionante Volcán de Colima. ¡Te esperamos!</p>
+      <ul class="contacto-lista">
+        <li><i class="fas fa-map-marker-alt"></i> Carretera Colima - Comala, Km. 5.5</li>
+        <li><i class="fas fa-calendar-check"></i> Reservaciones requeridas</li>
+      </ul>
+      <a href="/src/pages/visitanos.html" class="cta-button">
+        <i class="fas fa-calendar-alt"></i> Planear visita
+      </a>
+    </div>
+  </div>
+</section>  </main>
   <footer>
     <div class="footer-content">
       <p>© 2025 Universidad de Colima. Todos los derechos reservados.</p>

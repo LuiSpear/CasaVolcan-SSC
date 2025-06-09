@@ -46,21 +46,21 @@
       background-color: #e14c2a;
     }
     .contenedor-flex {
-      display:flex;
+      display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 100px;
+      gap: 40px;
       align-items: center;
       align-items: stretch;
-      padding: 60px 20px 100px;
+      padding: 40px 20px 40px;
     }
     .section {
       background-color: #fff;
       padding: 10px;
       border-radius: 25px;
       box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-      max-width: 1700px;
-      width: 100%;
+      max-width: 1200px;
+      width: 70%;
       box-sizing: border-box;
       margin: 0px auto; /* <-- Añade esta línea para centrar */
     }
@@ -326,48 +326,21 @@ body.dark-mode footer {
 
           <!-- Instrucciones de llenado -->
     <div class="formulario-instrucciones">
-
-
-           <!-- Formulario de Visítanos -->
-      <div class="formulario-contacto">
-      <h3>Solicita tu Visita</h3>
-
-      <p>Horarios de <strong>Jueves a Sábado</strong> de <strong>9:00 a 15:00 hrs</strong></p>
-      <form action="https://formsubmit.co/lacasadelvolcan@ucol.mx" method="POST">
-          <input type="hidden" name="_subject" id="hiddenSubject">
-          <input type="hidden" name="_captcha" value="false">
-          <label for="nombre">Nombre o Escuela:</label>
-          <input type="text" id="nombre" name="nombre" required placeholder="Ejemplo: Universidad de Colima" />
-          <label for="fecha">Fecha de Visita:</label>
-          <input type="date" id="fecha" name="fecha" required />
-          <label for="hora">Hora de Visita:</label>
-          <input type="time" id="hora" name="hora" required />
-          <label for="personas">No. de Personas:</label>
-          <input type="number" id="personas" name="personas" min="1" required placeholder="Ejemplo: 5"/>
-          <label for="tel">Teléfono:</label>
-          <input type="text" id="tel" name="tel" required placeholder="Ejemplo: 1234567890" />
-          <label for="correo">Correo Electrónico:</label>
-          <input type="email" id="correo" name="correo" required placeholder="Ejemplo: correo@ejemplo.com" />
-          <label for="asunto">Asunto:</label>
-          <input type="text" id="asunto" name="asunto" required placeholder="Ejemplo: Visita Escolar" />
-          <button type="submit" class="cta-button">Solicitar Visita</button>
-        </form>
-    </div>
-
+      <h3>¿Cómo llenar este formulario?</h3>
+      <p>¡Bienvenido(a)! Aquí te explicamos cómo llenar cada campo para que tu mensaje nos llegue de forma clara y precisa:</p>
+      <ul>
+        <strong>Tu Correo Electrónico:</strong> Ingresa tu correo válido y activo. Ejemplo: nombre@dominio.com.
+        <br>
+        <strong>Asunto:</strong> Describe brevemente el motivo de tu mensaje. Ejemplo: “Consulta sobre visitas escolares”.
+        <br>
+        <strong>Mensaje:</strong> Redacta tu duda o comentario con todos los detalles posibles. Así podremos responderte más rápido.
+      </ul>
+      <p>Cuando hayas completado todos los campos, haz clic en <strong>Enviar Correo</strong> y nuestro equipo te contactará a la brevedad. ¡Gracias por escribirnos!</p>
     </div>
 
       <!-- Formulario -->
       <div class="formulario-contacto">
-              <h3>Contáctanos</h3>
-      <p><strong>Rellena la información como se te indica</strong></p>
-      <ul>
-        <strong>Tu Correo Electrónico:</strong> Ingresa tu correo válido y activo. Ejemplo: nombre@dominio.com.
-        <br><p></p>
-        <strong>Asunto:</strong> Describe brevemente el motivo de tu mensaje. Ejemplo: “Consulta sobre visitas escolares”.
-        <br><p></p>
-        <strong>Mensaje:</strong> Redacta tu duda o comentario con todos los detalles posibles. Así podremos responderte más rápido.
-      </ul>
-      
+      <h3>Contáctanos</h3>
       <form action="https://formsubmit.co/lacasadelvolcan@ucol.mx" method="POST">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_subject" id="contactSubject">
@@ -389,15 +362,10 @@ body.dark-mode footer {
   </footer>
 
   <!-- Scripts -->
-<!-- Scripts -->
 <script>
-  document.querySelectorAll("form")[0].addEventListener("submit", function () {
-    const subjectValue = document.getElementById("asunto").value || "Nuevo mensaje de visitante";
-    document.getElementById("hiddenSubject").value = subjectValue;
-  });
-  document.querySelectorAll("form")[1].addEventListener("submit", function () {
-    const subject = document.getElementById("asunto2").value || "Mensaje desde contacto";
-    document.getElementById("contactSubject").value = subject;
+  document.querySelector("form").addEventListener("submit", function () {
+    const subjectValue = document.getElementById("asunto2").value || "Nuevo mensaje de visitante";
+    document.getElementById("contactSubject").value = subjectValue;
   });
 </script>
 

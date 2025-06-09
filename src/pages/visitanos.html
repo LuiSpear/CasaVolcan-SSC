@@ -52,6 +52,7 @@
       gap: 40px;
       align-items: center;
       padding: 50px 20px 40px;
+      align-items: stretch; /* <- Esto hace que ambas cajas se igualen en altura */
     }
     .section {
       background-color: #fff;
@@ -184,6 +185,28 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
+
+    .instrucciones-visita {
+  flex: 1 1 400px;
+  max-width: 800px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 25px;
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.instrucciones-visita h3 {
+  color: #ff5733;
+  margin-bottom: 10px;
+}
+.instrucciones-visita ul {
+  padding-left: 20px;
+}
+.instrucciones-visita li {
+  margin-bottom: 10px;
+}
+
     footer {
       font-size: medium;
       text-align: center;
@@ -238,6 +261,22 @@
       </div>
 
       <!-- Instrucciones -->
+
+      <div class="instrucciones-visita">
+  <h3>¿Cómo llenar este formulario?</h3>
+  <p>¡Bienvenido(a)! Aquí te explicamos cómo llenar cada campo de forma clara y precisa:</p>
+  <ul>
+    <li><strong>Nombre o Escuela:</strong> Escribe el nombre completo de la institución o de la persona responsable de la visita.</li>
+    <li><strong>Fecha de Visita:</strong> Selecciona la fecha exacta en la que planeas asistir.</li>
+    <li><strong>Hora de Visita:</strong> Indica la hora aproximada en la que llegarás.</li>
+    <li><strong>No. de Personas:</strong> Ingresa la cantidad de personas que asistirán a la visita.</li>
+    <li><strong>Teléfono:</strong> Proporciona un teléfono de contacto para coordinar cualquier detalle.</li>
+    <li><strong>Correo Electrónico:</strong> Escribe un correo electrónico válido para que podamos confirmarte la visita.</li>
+    <li><strong>Asunto:</strong> Describe brevemente el motivo de la visita (por ejemplo, visita escolar, académica o familiar).</li>
+  </ul>
+  <p>Cuando hayas completado todos los campos, haz clic en <strong>Enviar Solicitud</strong> para enviar tu formulario. ¡Te contactaremos a la brevedad!</p>
+</div>
+
     </div>
   </section>
 
